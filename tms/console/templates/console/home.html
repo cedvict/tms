@@ -1,0 +1,16 @@
+{% extends 'console/base.html' %}
+{% load bootstrap3 %}
+
+{% block title %}Test Management Console{% endblock %}
+
+{% block content %}
+    This is <em>bootstrap3</em> for <strong>Django</strong>.
+    <h3>All Projects</h3>
+
+    <ul>
+    {% for project in all_project_list %}
+        <!--<li>{{ project.name }} &#45;&#45; {{ project.description }} </li>-->
+        <li><a href="/console/project/{{ project.id }}/">{{ project.name }}</a></li>
+    {% endfor %}
+    </ul>
+{% endblock %}

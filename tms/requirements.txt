@@ -1,0 +1,4 @@
+Django>=2.1
+Sphinx
+sphinx_rtd_theme
+bootstrap3
