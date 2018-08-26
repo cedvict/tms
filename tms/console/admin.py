@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Project, TestPlan, TestRun, Component, TestCase, Role, Tester, TestRunCase
+from .models import Project, TestPlan, TestRun, Component, TestCase, Role, Tester, TestRunCase, Message, Release
 
 # admin.site.register(Project)
 # admin.site.register(TestPlan)
@@ -70,3 +70,7 @@ class TestRunAdmin(admin.ModelAdmin):
 admin.site.register(TestRun, TestRunAdmin)
 
 admin.site.register(TestPlan)
+
+admin.site.register(Message)
+
+admin.site.register(Release)

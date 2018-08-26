@@ -2,25 +2,27 @@
 
 {% load bootstrap3 %}
 
+<!--{% load static %}-->
+
+<!--<link rel="stylesheet" type="text/css" href="{% static 'console/base.css' %}">-->
+
 {% block bootstrap3_content %}
-    <div class="container">
-        <h1>{% block title %}(no title){% endblock %}</h1>
 
-        <p>
-            <a href="{% url 'console:home' %}">home</a>
-            <a href="{% url 'console:formset_default' %}">formset</a>
-            <a href="{% url 'console:form_default' %}">form</a>
-            <a href="{% url 'console:form_by_field' %}">form_by_field</a>
-            <a href="{% url 'console:form_horizontal' %}">form_horizontal</a>
-            <a href="{% url 'console:form_inline' %}">form_inline</a>
-            <a href="{% url 'console:form_with_files' %}">form_with_files</a>
-            <a href="{% url 'console:pagination' %}">pagination</a>
-            <a href="{% url 'console:misc' %}">miscellaneous</a>
-        </p>
+<div class="container">
+    <span id="return" class=""><a
+            class="link-noline"
+            href="{% url 'console:home' %}">&larr; Return to Dashboard</a></span>
+    <h1>{% block title %}(no content){% endblock %}</h1>
+    <ul class="nav nav-tabs">
+        <li role="presentation"><a href="{% url 'console:overview' project.id %}">Overview</a></li>
+        <li role="presentation"><a href="{% url 'console:test_run' project.id %}">Test Runs & Results</a></li>
+        <li role="presentation"><a href="{% url 'console:test_case' project.id %}">Test Cases</a></li>
+        <li role="presentation"><a href="{% url 'console:release' project.id %}">Releases</a></li>
+    </ul>
 
-        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+    <!--{% autoescape off %}{% bootstrap_messages %}{% endautoescape %}-->
 
-        {% block content %}(no content){% endblock %}
-    </div>
+    {% block content %}(no content){% endblock %}
+</div>
 
 {% endblock %}

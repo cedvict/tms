@@ -1,16 +1,33 @@
-{% extends 'console/base.html' %}
+{% extends 'console/base_dashboard.html' %}
 {% load bootstrap3 %}
 
-{% block title %}Test Management Console{% endblock %}
-
 {% block content %}
-    This is <em>bootstrap3</em> for <strong>Django</strong>.
-    <h3>All Projects</h3>
 
-    <ul>
-    {% for project in all_project_list %}
-        <!--<li>{{ project.name }} &#45;&#45; {{ project.description }} </li>-->
-        <li><a href="/console/project/{{ project.id }}/">{{ project.name }}</a></li>
-    {% endfor %}
-    </ul>
+
+<div class="bg-info text-white">
+    Updates
+</div>
+{% for message in last_five_messages_list %}
+<li>{{ message.name }}</li>
+{% endfor %}
+
+<hr>
+
+<div class="bg-info text-white">
+    Projects
+</div>
+{% for project in all_project_list %}
+<li>
+    <a href="/console/project/{{ project.id }}/">{{ project.name }}</a>
+    <div class="container">
+        <a class="link" href="{% url 'console:test_run' project.id %}">Test Runs</a> |
+        <a class="link" href="{% url 'console:test_case' project.id %}">Test Cases</a> |
+        <a class="link" href="{% url 'console:release' project.id %}">Releases</a>
+    </div>
+    <div class="container">
+        Contains <strong>{{ test_run_stats|get_item:project.id }}</strong> uncompleted test run(s) and <strong>{{ release_stats|get_item:project.id }}</strong> release(s).
+    </div>
+</li>
+{% endfor %}
+
 {% endblock %}
