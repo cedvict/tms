@@ -17,6 +17,7 @@ from .views import (
     TestRunView,
     TestCaseView,
     ReleaseView,
+    ProjectCreateView,
 )
 
 app_name = 'console'
@@ -31,6 +32,7 @@ urlpatterns = [
     url(r"^pagination$", PaginationView.as_view(), name="pagination"),
     url(r"^misc$", MiscView.as_view(), name="misc"),
     url(r"^project/(?P<pk>\d+)/$", ProjectView.as_view(), name='overview'),
+    url(r"^project/add/$", ProjectCreateView.as_view(), name='project_create'),
     url(r"^project/(?P<pk>\d+)/test_run/$", TestRunView.as_view(), name='test_run'),
     url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseView.as_view(), name='test_case'),
     url(r"^project/(?P<pk>\d+)/release/$", ReleaseView.as_view(), name='release'),

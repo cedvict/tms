@@ -20,8 +20,8 @@ PLATFORM_CHOICES = (
 class Project(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
-    created_date = models.DateTimeField('date created')
-    upd_date = models.DateTimeField('date updated')
+    created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
+    upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -58,6 +58,8 @@ class Release(models.Model):
         (RELEASE_STATUS_DISCARDED, 'Discarded'),
     )
     release_status = models.IntegerField(choices=RELEASE_STATUS_CHOICES, default=RELEASE_STATUS_CREATED)
+    created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
+    upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
 
     def __str__(self):
         return self.project.name + ' ' + self.name + ' ' + str(PLATFORM_CHOICES[self.release_platform][1])
@@ -69,8 +71,8 @@ class Release(models.Model):
 class TestPlan(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
-    created_date = models.DateTimeField('date created')
-    upd_date = models.DateTimeField('date updated')
+    created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
+    upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
 
     def __str__(self):
         return self.name
@@ -82,8 +84,8 @@ class TestPlan(models.Model):
 class TestRun(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
-    created_date = models.DateTimeField(auto_now_add=True)
-    upd_date = models.DateTimeField(auto_now=True)
+    created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
+    upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
     project = models.ForeignKey(Project, on_delete=models.DO_NOTHING)
     test_plan = models.ForeignKey(TestPlan, on_delete=models.DO_NOTHING)
 
@@ -153,8 +155,8 @@ class TestCase(models.Model):
     test_case_type = models.IntegerField(choices=TEST_CASE_TYPE_CHOICES)
     estimate_in_minute = models.DecimalField(max_digits=5, decimal_places=2)
 
-    created_date = models.DateTimeField(auto_now_add=True)
-    upd_date = models.DateTimeField(auto_now=True)
+    created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
+    upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
 
     project = models.ForeignKey(Project, on_delete=models.DO_NOTHING)
     component = models.ForeignKey(Component, on_delete=models.DO_NOTHING)
@@ -240,8 +242,8 @@ class Tester(models.Model):
 
 class Message(models.Model):
     name = models.CharField(max_length=100)
-    created_date = models.DateTimeField(auto_now_add=True)
-    upd_date = models.DateTimeField(auto_now=True)
+    created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
+    upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
 
     def __str__(self):
         return self.name

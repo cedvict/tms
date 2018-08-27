@@ -6,7 +6,10 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models.fields.files import FieldFile
 from django.views.generic import FormView
 from django.views.generic.base import TemplateView
+from django.views.generic.edit import CreateView
 from django.views import generic
+from django.contrib.admin import widgets
+
 from django.db.models import Q
 
 from django.contrib import messages
@@ -141,3 +144,11 @@ class TestCaseView(generic.DetailView):
 class ReleaseView(generic.DetailView):
     model = Project
     template_name = 'console/release.html'
+
+
+class ProjectCreateView(CreateView):
+    model = Project
+    success_url = "/console/"
+    exclude = ('created_date', 'upd_date')
+    fields = ('name', 'description')
+

@@ -3,31 +3,68 @@
 
 {% block content %}
 
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
 
-<div class="bg-info text-white">
-    Updates
-</div>
-{% for message in last_five_messages_list %}
-<li>{{ message.name }}</li>
-{% endfor %}
+            <div>
+                <strong>Updates</strong>
+            </div>
+            {% for message in last_five_messages_list %}
+            <li>{{ message.name }}</li>
+            {% endfor %}
 
-<hr>
+            <hr>
+            <div>
+                <strong>Projects</strong>
+            </div>
+            {% for project in all_project_list %}
+            <li>
+                <a href="/console/project/{{ project.id }}/">{{ project.name }}</a>
+                <div class="container">
+                    <a class="link" href="{% url 'console:test_run' project.id %}">Test Runs</a> |
+                    <a class="link" href="{% url 'console:test_case' project.id %}">Test Cases</a> |
+                    <a class="link" href="{% url 'console:release' project.id %}">Releases</a>
+                </div>
+                <div class="container">
+                    Contains <strong>{{ test_run_stats|get_item:project.id }}</strong> uncompleted test run(s) and
+                    <strong>{{ release_stats|get_item:project.id }}</strong> release(s).
+                </div>
+            </li>
+            {% endfor %}
+            <a class="link" href="{% url 'console:project_create' %}">Add Project</a>
 
-<div class="bg-info text-white">
-    Projects
-</div>
-{% for project in all_project_list %}
-<li>
-    <a href="/console/project/{{ project.id }}/">{{ project.name }}</a>
-    <div class="container">
-        <a class="link" href="{% url 'console:test_run' project.id %}">Test Runs</a> |
-        <a class="link" href="{% url 'console:test_case' project.id %}">Test Cases</a> |
-        <a class="link" href="{% url 'console:release' project.id %}">Releases</a>
+
+            <hr>
+            <div>
+                <strong>Test Plan</strong>
+            </div>
+            {% for project in all_project_list %}
+            <li>
+                <a href="/console/project/{{ project.id }}/">{{ project.name }}</a>
+                <div class="container">
+                    <a class="link" href="{% url 'console:test_run' project.id %}">Test Runs</a> |
+                    <a class="link" href="{% url 'console:test_case' project.id %}">Test Cases</a> |
+                    <a class="link" href="{% url 'console:release' project.id %}">Releases</a>
+                </div>
+                <div class="container">
+                    Contains <strong>{{ test_run_stats|get_item:project.id }}</strong> uncompleted test run(s) and
+                    <strong>{{ release_stats|get_item:project.id }}</strong> release(s).
+                </div>
+            </li>
+            {% endfor %}
+            <a class="link" href="{% url 'console:project_create' %}">Add Project</a>
+
+
+            <hr>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <strong>Activities</strong>
+            </div>
+        </div>
     </div>
-    <div class="container">
-        Contains <strong>{{ test_run_stats|get_item:project.id }}</strong> uncompleted test run(s) and <strong>{{ release_stats|get_item:project.id }}</strong> release(s).
-    </div>
-</li>
-{% endfor %}
-
+</div>
 {% endblock %}
+
+
