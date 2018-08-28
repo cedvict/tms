@@ -20,6 +20,7 @@ from .views import (
     ReleaseView,
     ProjectCreateView,
     ReleaseCreateView,
+    ReleaseUpdateView,
 )
 
 app_name = 'console'
@@ -40,4 +41,5 @@ urlpatterns = [
     url(r"^project/(?P<pk>\d+)/report/$", ReportView.as_view(), name='report'),
     url(r"^project/(?P<pk>\d+)/release/$", ReleaseView.as_view(), name='release'),
     url(r"^project/(?P<pk>\d+)/release/add/$", ReleaseCreateView.as_view(), name='release_add'),
+    url(r"^release/(?P<pk>\d+)/update/$", ReleaseUpdateView.as_view(), name='release_update'),
 ]

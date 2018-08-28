@@ -6,7 +6,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models.fields.files import FieldFile
 from django.views.generic import FormView
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 from django.views import generic
 from django.urls import reverse
 
@@ -156,11 +156,6 @@ class ReportView(generic.DetailView):
     template_name = 'console/report.html'
 
 
-class ReleaseView(generic.DetailView):
-    model = Project
-    template_name = 'console/release.html'
-
-
 class ProjectCreateView(CreateView):
     model = Project
     success_url = "/console/"
@@ -170,7 +165,7 @@ class ProjectCreateView(CreateView):
 
 class ReleaseCreateView(CreateView):
     model = Release
-    # success_url = reverse_lazy('console:release_add', args=(1,))
+    template_name = 'console/release_add.html'
     exclude = ('created_date', 'upd_date')
     fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
 
@@ -178,3 +173,24 @@ class ReleaseCreateView(CreateView):
         return reverse('console:release', kwargs={'pk': self.kwargs.get("pk")})
 
 
+class ReleaseView(generic.ListView):
+    model = Release
+    template_name = 'console/release_list.html'
+    # paginate_by = 50  # if pagination is desired
+
+    def get_context_data(self, **kwargs):
+        pk = self.kwargs.get("pk")
+        project = Project.objects.get(pk=pk)
+        context = super().get_context_data(**kwargs)
+        context['release_list'] = Release.objects.filter(project=project)
+        return context
+
+
+class ReleaseUpdateView(UpdateView):
+    model = Release
+    fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
+    template_name = 'console/release_update.html'
+
+    def get_success_url(self):
+        release = Release.objects.get(pk=self.kwargs.get("pk"))
+        return reverse('console:release', kwargs={'pk': release.project.id})
