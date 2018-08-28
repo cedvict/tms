@@ -5,7 +5,13 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-9">
+            <div>
+                <strong>Test Progress</strong>
+            </div>
+            TODO: here shows a bar chart about the test burn down diagram.
+
+            <hr>
 
             <div>
                 <strong>Updates</strong>
@@ -32,12 +38,10 @@
                 </div>
             </li>
             {% endfor %}
-            <a class="link" href="{% url 'console:project_create' %}">Add Project</a>
-
 
             <hr>
             <div>
-                <strong>Test Plan</strong>
+                <strong>Test Plans</strong>
             </div>
             {% for project in all_project_list %}
             <li>
@@ -53,14 +57,39 @@
                 </div>
             </li>
             {% endfor %}
-            <a class="link" href="{% url 'console:project_create' %}">Add Project</a>
-
 
             <hr>
         </div>
-        <div class="col-md-4">
+        <div class="col-md-3">
             <div>
-                <strong>Activities</strong>
+                <strong>Administration</strong>
+                <div>
+                    Projects
+                    <li><a class="link" href="{% url 'console:project_create' %}">Add Project</a></li>
+                    <li><a class="link" href="{% url 'console:project_create' %}">View Projects</a></li>
+                </div>
+                <hr>
+                <div>
+                    Users & Roles
+                    <li><a class="link" href="#">Add User & Role</a></li>
+                    <li><a class="link" href="#">View Users & Roles</a></li>
+                </div>
+                <hr>
+                <div>
+                    Device Management
+                    <li><a class="link" href="#">Add Device</a></li>
+                    <li><a class="link" href="#">View Devices</a></li>
+                </div>
+                <hr>
+                <div>
+                    Integration
+                    <li><a class="link" href="#">Configure JIRA</a></li>
+                    <li><a class="link" href="#">Configure Mattermost</a></li>
+                </div>
+                <hr>
+                <div>
+                    <li><a class="link" href="#">Logout</a></li>
+                </div>
             </div>
         </div>
     </div>

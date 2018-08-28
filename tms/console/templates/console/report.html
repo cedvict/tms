@@ -1,12 +1,11 @@
-{% extends 'console/base_dashboard.html' %}
-
+{% extends 'console/base.html' %}
 {% load bootstrap3 %}
 
 {% block title %}{{ project.name }}{% endblock %}
 
 {% block content %}
 <div class="bg-info text-white">
-    Overview
+    Report
 </div>
 {% for message in last_five_messages_list %}
 <li>{{ message.name }}</li>

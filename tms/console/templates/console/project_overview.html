@@ -1,0 +1,81 @@
+{% extends 'console/base.html' %}
+{% load bootstrap3 %}
+<h1>{% block title %}{{ project.name }}{% endblock %}</h1>
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div>
+                <strong>{{ project.name }} Test Progress</strong>
+            </div>
+            TODO: here shows a bar chart about the test burn down diagram
+
+            <hr>
+            <div>
+                <strong>Test Runs</strong>
+            </div>
+            {% for test_run in test_run_list %}
+            <div>
+                <li>{{ test_run.name }} By TESTER_NAME on MM/DD/YYYY</li>
+            </div>
+
+            {% endfor %}
+
+            <hr>
+            <div>
+                <strong>Activities</strong>
+            </div>
+            <strong>Test Runs Activities</strong>
+            {% for test_run in test_run_activity_list %}
+            <div>
+                <li>Test Run: {{ test_run.name }} | Status Changed: {{ test_run.test_run_status }} | Time: {{ test_run.upd_date }}
+                </li>
+            </div>
+            {% endfor %}
+            <strong>Test Plan Activities</strong>
+            {% for test_plan in test_plan_activity_list %}
+            <div>
+                <li>Test Plan: {{ test_plan.name }} | Status Changed: {{ test_plan.test_plan_status }} | Time: {{ test_plan.upd_date }}
+                </li>
+            </div>
+            {% endfor %}
+            <strong>Releases Activities</strong>
+            {% for release in release_activity_list %}
+            <div>
+                <li>Release: {{ project.name }} {{ release.name }} {{ release.release_platform }} | Status Changed: {{ release.release_status }} | Time: {{ release.upd_date }}
+                </li>
+            </div>
+            {% endfor %}
+
+            <hr>
+        </div>
+        <div class="col-md-3">
+            <div>
+                <strong>Actions</strong>
+                <div>
+                    Releases
+                    <li><a class="link" href="{% url 'console:release_add' project.id %}">Add Release</a></li>
+                    <li><a class="link" href="#">View All</a></li>
+                </div>
+                <hr>
+                <div>
+                    Test Runs
+                    <li><a class="link" href="#">Add Test Run</a></li>
+                    <li><a class="link" href="#">View All</a></li>
+                </div>
+                <hr>
+                <div>
+                    Test Cases
+                    <li><a class="link" href="#">View All</a></li>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+
+

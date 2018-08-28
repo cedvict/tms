@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 INSTALLED_APPS = [
     'bootstrap3',
+    'simple_history',
     'console.apps.ConsoleConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -48,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'tms.urls'

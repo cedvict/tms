@@ -9,15 +9,14 @@
 {% block bootstrap3_content %}
 
 <div class="container">
-    <span id="return" class=""><a
-            class="link-noline"
-            href="{% url 'console:home' %}">&larr; Return to Dashboard</a></span>
+    <a href="{% url 'console:home' %}">&larr; Return to Dashboard</a>
     <h1>{% block title %}(no content){% endblock %}</h1>
+        <hr>
     <ul class="nav nav-tabs">
         <li role="presentation"><a href="{% url 'console:overview' project.id %}">Overview</a></li>
         <li role="presentation"><a href="{% url 'console:test_run' project.id %}">Test Runs & Results</a></li>
         <li role="presentation"><a href="{% url 'console:test_case' project.id %}">Test Cases</a></li>
-        <li role="presentation"><a href="{% url 'console:release' project.id %}">Releases</a></li>
+        <li role="presentation"><a href="{% url 'console:report' project.id %}">Reports</a></li>
     </ul>
 
     <!--{% autoescape off %}{% bootstrap_messages %}{% endautoescape %}-->

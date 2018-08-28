@@ -16,8 +16,10 @@ from .views import (
     ProjectView,
     TestRunView,
     TestCaseView,
+    ReportView,
     ReleaseView,
     ProjectCreateView,
+    ReleaseCreateView,
 )
 
 app_name = 'console'
@@ -35,5 +37,7 @@ urlpatterns = [
     url(r"^project/add/$", ProjectCreateView.as_view(), name='project_create'),
     url(r"^project/(?P<pk>\d+)/test_run/$", TestRunView.as_view(), name='test_run'),
     url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseView.as_view(), name='test_case'),
+    url(r"^project/(?P<pk>\d+)/report/$", ReportView.as_view(), name='report'),
     url(r"^project/(?P<pk>\d+)/release/$", ReleaseView.as_view(), name='release'),
+    url(r"^project/(?P<pk>\d+)/release/add/$", ReleaseCreateView.as_view(), name='release_add'),
 ]

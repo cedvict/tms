@@ -8,7 +8,7 @@ from django.views.generic import FormView
 from django.views.generic.base import TemplateView
 from django.views.generic.edit import CreateView
 from django.views import generic
-from django.contrib.admin import widgets
+from django.urls import reverse
 
 from django.db.models import Q
 
@@ -16,7 +16,7 @@ from django.contrib import messages
 
 from .forms import ContactForm, FilesForm, ContactFormSet
 
-from .models import Project, Message, Release, TestRun
+from .models import Project, Message, Release, TestRun, TestPlan
 
 from django.template.defaulttags import register
 
@@ -128,7 +128,17 @@ class MiscView(TemplateView):
 
 class ProjectView(generic.DetailView):
     model = Project
-    template_name = 'console/overview.html'
+    template_name = 'console/project_overview.html'
+
+    def get_context_data(self, **kwargs):
+        pk = self.kwargs.get("pk")
+        project = Project.objects.get(pk=pk)
+        context = super().get_context_data(**kwargs)
+        context['test_run_list'] = TestRun.objects.filter(project=project)
+        context['test_run_activity_list'] = TestRun.history.filter(project__id=pk)
+        context['test_plan_activity_list'] = TestPlan.history.filter(project__id=pk)
+        context['release_activity_list'] = Release.history.filter(project__id=pk)
+        return context
 
 
 class TestRunView(generic.DetailView):
@@ -141,6 +151,11 @@ class TestCaseView(generic.DetailView):
     template_name = 'console/test_case.html'
 
 
+class ReportView(generic.DetailView):
+    model = Project
+    template_name = 'console/report.html'
+
+
 class ReleaseView(generic.DetailView):
     model = Project
     template_name = 'console/release.html'
@@ -151,4 +166,15 @@ class ProjectCreateView(CreateView):
     success_url = "/console/"
     exclude = ('created_date', 'upd_date')
     fields = ('name', 'description')
+
+
+class ReleaseCreateView(CreateView):
+    model = Release
+    # success_url = reverse_lazy('console:release_add', args=(1,))
+    exclude = ('created_date', 'upd_date')
+    fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
+
+    def get_success_url(self):
+        return reverse('console:release', kwargs={'pk': self.kwargs.get("pk")})
+
 

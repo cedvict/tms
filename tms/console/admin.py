@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Project, TestPlan, TestRun, Component, TestCase, Role, Tester, TestRunCase, Message, Release
+from .models import Project, TestPlan, TestRun, Component, TestCase, Role, Tester, TestRunCase, Message, Release, TesterRole
 
 # admin.site.register(Project)
 # admin.site.register(TestPlan)
@@ -46,14 +46,6 @@ class ProjectAdmin(admin.ModelAdmin):
     # list_filter = ['name']
     search_fields = ['description']
 
-    # def get_actions(self, request):
-    #     actions = super(ProjectAdmin, self).get_actions(request)
-    #     del actions['delete_selected']
-    #     return actions
-    #
-    # def has_delete_permission(self, request, obj=None):
-    #     return False
-
 
 admin.site.register(Project, ProjectAdmin)
 
@@ -74,3 +66,9 @@ admin.site.register(TestPlan)
 admin.site.register(Message)
 
 admin.site.register(Release)
+
+admin.site.register(Role)
+
+admin.site.register(Tester)
+
+admin.site.register(TesterRole)

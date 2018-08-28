@@ -3,6 +3,8 @@ import datetime
 from django.db import models
 from django.utils import timezone
 
+from simple_history.models import HistoricalRecords
+
 PLATFORM_GENERIC = 0
 PLATFORM_ANDROID = 1
 PLATFORM_IOS = 2
@@ -67,18 +69,36 @@ class Release(models.Model):
     class Meta:
         db_table = 'release_tab'
 
+    history = HistoricalRecords()
+
 
 class TestPlan(models.Model):
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
     created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
     upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
+    project = models.ForeignKey(Project, on_delete=models.DO_NOTHING)
 
     def __str__(self):
         return self.name
 
     class Meta:
         db_table = 'test_plan_tab'
+
+    history = HistoricalRecords()
+
+    TEST_PLAN_STATUS_CREATED = 0
+    TEST_PLAN_STATUS_ACTIVE = 1
+    TEST_PLAN_STATUS_COMPLETED = 2
+    TEST_PLAN_STATUS_DISCARDED = 3
+    TEST_PLAN_STATUS_CHOICES = (
+        (TEST_PLAN_STATUS_CREATED, 'Created'),
+        (TEST_PLAN_STATUS_ACTIVE, 'Active'),
+        (TEST_PLAN_STATUS_COMPLETED, 'Completed'),
+        (TEST_PLAN_STATUS_DISCARDED, 'Discarded'),
+    )
+
+    test_plan_status = models.IntegerField(choices=TEST_PLAN_STATUS_CHOICES, default=TEST_PLAN_STATUS_CREATED)
 
 
 class TestRun(models.Model):
@@ -109,6 +129,8 @@ class TestRun(models.Model):
 
     class Meta:
         db_table = 'test_run_tab'
+
+    history = HistoricalRecords()
 
 
 class Component(models.Model):
@@ -238,6 +260,17 @@ class Tester(models.Model):
 
     class Meta:
         db_table = 'tester_tab'
+
+
+class TesterRole(models.Model):
+    tester = models.ForeignKey(Tester, on_delete=models.CASCADE)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.tester.name + ':' + self.role.name
+
+    class Meta:
+        db_table = 'tester_role_tab'
 
 
 class Message(models.Model):
