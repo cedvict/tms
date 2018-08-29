@@ -76,3 +76,4 @@ admin.site.register(UserRole)
 
 admin.site.register(Device)
 
+admin.site.register(TestCase)
