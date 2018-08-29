@@ -1,4 +1,4 @@
-{% extends 'console/base.html' %}
+{% extends 'console/base/base.html' %}
 {% load bootstrap3 %}
 <h1>{% block title %}{{ project.name }}{% endblock %}</h1>
 {% block content %}
@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-md-9">
             <div>
-                <strong>{{ project.name }} Test Progress</strong>
+                <strong>Test Progress</strong>
             </div>
             TODO: here shows a bar chart about the test burn down diagram
 
@@ -67,7 +67,7 @@
                 <hr>
                 <div>
                     Test Cases
-                    <li><a class="link" href="#">View All</a></li>
+                    <li><a class="link" href="{% url 'console:test_case' project.id %}">View All</a></li>
                 </div>
                 <hr>
             </div>

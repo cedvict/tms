@@ -4,32 +4,22 @@ from __future__ import unicode_literals
 from django.conf.urls import url
 
 from .views import (
-    HomePageView,
-    FormHorizontalView,
-    FormInlineView,
-    PaginationView,
-    FormWithFilesView,
-    DefaultFormView,
-    MiscView,
-    DefaultFormsetView,
-    DefaultFormByFieldView,
-    ProjectView,
+    DashboardView,
     TestRunView,
     TestCaseView,
     ReportView,
-    ReleaseListView,
-    ProjectCreateView,
-    ProjectListView,
-    ProjectUpdateView,
-    ReleaseCreateView,
-    ReleaseUpdateView,
-    ProjectDeleteView,
-    ReleaseDeleteView,
 )
+from console.example.example_views import DefaultFormsetView, DefaultFormView, DefaultFormByFieldView, \
+    FormHorizontalView, FormInlineView, FormWithFilesView, PaginationView, MiscView
+from console.project.project_views import ProjectListView, ProjectCreateView, ProjectView, ProjectUpdateView, \
+    ProjectDeleteView
+from console.release.release_views import ReleaseCreateView, ReleaseListView, ReleaseUpdateView, ReleaseDeleteView
+from console.device.device_views import DeviceCreateView, DeviceListView, DeviceUpdateView, DeviceDeleteView
+from console.message.message_views import MessageCreateView, MessageListView, MessageUpdateView, MessageDeleteView
 
 app_name = 'console'
 urlpatterns = [
-    url(r"^$", HomePageView.as_view(), name="home"),
+    url(r"^$", DashboardView.as_view(), name="home"),
     url(r"^formset$", DefaultFormsetView.as_view(), name="formset_default"),
     url(r"^form$", DefaultFormView.as_view(), name="form_default"),
     url(r"^form_by_field$", DefaultFormByFieldView.as_view(), name="form_by_field"),
@@ -54,4 +44,14 @@ urlpatterns = [
     url(r"^project/(?P<pk>\d+)/release/add/$", ReleaseCreateView.as_view(), name='release_add'),
     url(r"^release/(?P<pk>\d+)/update/$", ReleaseUpdateView.as_view(), name='release_update'),
     url(r"^release/(?P<pk>\d+)/delete/$", ReleaseDeleteView.as_view(), name='release_delete'),
+
+    url(r"^device/add/$", DeviceCreateView.as_view(), name='device_create'),
+    url(r"^device/list/$", DeviceListView.as_view(), name='device_list'),
+    url(r"^device/(?P<pk>\d+)/update/$", DeviceUpdateView.as_view(), name='device_update'),
+    url(r"^device/(?P<pk>\d+)/delete/$", DeviceDeleteView.as_view(), name='device_delete'),
+
+    url(r"^message/add/$", MessageCreateView.as_view(), name='message_create'),
+    url(r"^message/list/$", MessageListView.as_view(), name='message_list'),
+    url(r"^message/(?P<pk>\d+)/update/$", MessageUpdateView.as_view(), name='message_update'),
+    url(r"^message/(?P<pk>\d+)/delete/$", MessageDeleteView.as_view(), name='message_delete'),
 ]

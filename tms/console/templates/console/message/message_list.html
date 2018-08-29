@@ -1,0 +1,10 @@
+<h1>Message List</h1>
+<ul>
+{% for obj in object_list %}
+    <li> {{ obj }} </li>
+    <a class="link" href="{% url 'console:message_update' obj.id %}">Update</a>
+    <a class="link" href="{% url 'console:message_delete' obj.id %}">Delete</a>
+{% empty %}
+    <li>No Device yet.</li>
+{% endfor %}
+</ul>

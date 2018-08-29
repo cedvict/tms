@@ -1,10 +1,10 @@
-<h1>Project List</h1>
+<h1>Device List</h1>
 <ul>
-{% for project in project_list %}
-    <li> {{ project }} </li>
-    <a class="link" href="{% url 'console:device_update' device.id %}">Update</a>
-    <a class="link" href="{% url 'console:device_delete' device.id %}">Delete</a>
+{% for obj in object_list %}
+    <li> {{ obj }} </li>
+    <a class="link" href="{% url 'console:device_update' obj.id %}">Update</a>
+    <a class="link" href="{% url 'console:device_delete' obj.id %}">Delete</a>
 {% empty %}
-    <li>No project yet.</li>
+    <li>No Device yet.</li>
 {% endfor %}
 </ul>

@@ -1,4 +1,4 @@
-{% extends 'console/base_dashboard.html' %}
+{% extends 'console/base/base_dashboard.html' %}
 {% load bootstrap3 %}
 
 {% block content %}
@@ -17,7 +17,7 @@
                 <strong>News Update</strong>
             </div>
             {% for message in last_five_messages_list %}
-            <li>{{ message.name }}</li>
+            <li>{{ message.detail }}</li>
             {% endfor %}
 
             <hr>
@@ -58,8 +58,8 @@
                 <hr>
                 <div>
                     Device Management
-                    <li><a class="link" href="#">Add Device</a></li>
-                    <li><a class="link" href="#">View Devices</a></li>
+                    <li><a class="link" href="{% url 'console:device_create' %}">Add Device</a></li>
+                    <li><a class="link" href="{% url 'console:device_list' %}">View Devices</a></li>
                 </div>
                 <hr>
                 <div>
@@ -71,8 +71,8 @@
                 <hr>
                 <div>
                     Updates
-                    <li><a class="link" href="#">Add News</a></li>
-                    <li><a class="link" href="#">View News</a></li>
+                    <li><a class="link" href="{% url 'console:message_create' %}">Add Message</a></li>
+                    <li><a class="link" href="{% url 'console:message_list' %}">View Messages</a></li>
                     <li><a class="link" href="#">Subscribe</a></li>
                 </div>
                 <hr>

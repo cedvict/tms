@@ -44,6 +44,43 @@ class Project(models.Model):
         db_table = 'project_tab'
 
 
+class User(models.Model):
+    name = models.CharField(max_length=20)
+    description = models.CharField(max_length=200)
+    created_date = models.DateTimeField(auto_now_add=True)
+    upd_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'user_tab'
+
+
+class Role(models.Model):
+    name = models.CharField(max_length=20)
+    description = models.CharField(max_length=200)
+    created_date = models.DateTimeField(auto_now_add=True)
+    upd_date = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'role_tab'
+
+
+class UserRole(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    role = models.ForeignKey(Role, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.user.name + ':' + self.role.name
+
+    class Meta:
+        db_table = 'user_role_tab'
+
+
 class Release(models.Model):
     project = models.ForeignKey(Project, on_delete=models.DO_NOTHING)
     name = models.CharField(max_length=20)
@@ -108,6 +145,7 @@ class TestRun(models.Model):
     upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
     project = models.ForeignKey(Project, on_delete=models.DO_NOTHING)
     test_plan = models.ForeignKey(TestPlan, on_delete=models.DO_NOTHING)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, default=None, blank=True)
 
     TEST_RUN_STATUS_CREATED = 0
     TEST_RUN_STATUS_ACTIVE = 1
@@ -236,50 +274,13 @@ class TestRunCase(models.Model):
         return self.test_case.name
 
 
-class Role(models.Model):
-    name = models.CharField(max_length=20)
-    description = models.CharField(max_length=200)
-    created_date = models.DateTimeField(auto_now_add=True)
-    upd_date = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        db_table = 'role_tab'
-
-
-class Tester(models.Model):
-    name = models.CharField(max_length=20)
-    description = models.CharField(max_length=200)
-    created_date = models.DateTimeField(auto_now_add=True)
-    upd_date = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.name
-
-    class Meta:
-        db_table = 'tester_tab'
-
-
-class TesterRole(models.Model):
-    tester = models.ForeignKey(Tester, on_delete=models.CASCADE)
-    role = models.ForeignKey(Role, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return self.tester.name + ':' + self.role.name
-
-    class Meta:
-        db_table = 'tester_role_tab'
-
-
 class Message(models.Model):
-    name = models.CharField(max_length=100)
+    detail = models.CharField(max_length=100)
     created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
     upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
 
     def __str__(self):
-        return self.name
+        return self.detail
 
     class Meta:
         db_table = 'message_tab'
@@ -290,7 +291,7 @@ class Device(models.Model):
     description = models.CharField(max_length=200)
     created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
     upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
-    Tester = models.ForeignKey(Tester, on_delete=models.DO_NOTHING, blank=True, default=None)
+    user = models.ForeignKey(User, on_delete=models.DO_NOTHING, blank=True, default=None)
 
     DEVICE_PLATFORM_ANDROID = 0
     DEVICE_PLATFORM_IOS = 1
