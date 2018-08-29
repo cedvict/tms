@@ -17,10 +17,13 @@ from .views import (
     TestRunView,
     TestCaseView,
     ReportView,
-    ReleaseView,
+    ReleaseListView,
     ProjectCreateView,
+    ProjectListView,
+    ProjectUpdateView,
     ReleaseCreateView,
     ReleaseUpdateView,
+    ProjectDeleteView,
 )
 
 app_name = 'console'
@@ -34,12 +37,19 @@ urlpatterns = [
     url(r"^form_with_files$", FormWithFilesView.as_view(), name="form_with_files"),
     url(r"^pagination$", PaginationView.as_view(), name="pagination"),
     url(r"^misc$", MiscView.as_view(), name="misc"),
+
     url(r"^project/(?P<pk>\d+)/$", ProjectView.as_view(), name='overview'),
     url(r"^project/add/$", ProjectCreateView.as_view(), name='project_create'),
+    url(r"^project/list/$", ProjectListView.as_view(), name='project_list'),
+    url(r"^project/(?P<pk>\d+)/update/$", ProjectUpdateView.as_view(), name='project_update'),
+    url(r"^project/(?P<pk>\d+)/delete/$", ProjectDeleteView.as_view(), name='project_delete'),
+
     url(r"^project/(?P<pk>\d+)/test_run/$", TestRunView.as_view(), name='test_run'),
     url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseView.as_view(), name='test_case'),
     url(r"^project/(?P<pk>\d+)/report/$", ReportView.as_view(), name='report'),
-    url(r"^project/(?P<pk>\d+)/release/$", ReleaseView.as_view(), name='release'),
+
+    # url(r"^project/(?P<pk>\d+)/release/$", ReleaseView.as_view(), name='release'),
+    url(r"^project/(?P<pk>\d+)/release/list/$", ReleaseListView.as_view(), name='release_list'),
     url(r"^project/(?P<pk>\d+)/release/add/$", ReleaseCreateView.as_view(), name='release_add'),
     url(r"^release/(?P<pk>\d+)/update/$", ReleaseUpdateView.as_view(), name='release_update'),
 ]

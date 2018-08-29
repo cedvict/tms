@@ -14,7 +14,7 @@
             <hr>
 
             <div>
-                <strong>Updates</strong>
+                <strong>News Update</strong>
             </div>
             {% for message in last_five_messages_list %}
             <li>{{ message.name }}</li>
@@ -26,30 +26,11 @@
             </div>
             {% for project in all_project_list %}
             <li>
-                <a href="/console/project/{{ project.id }}/">{{ project.name }}</a>
+                <a href="{% url 'console:overview' project.id %}">{{ project.name }}</a>
                 <div class="container">
                     <a class="link" href="{% url 'console:test_run' project.id %}">Test Runs</a> |
                     <a class="link" href="{% url 'console:test_case' project.id %}">Test Cases</a> |
-                    <a class="link" href="{% url 'console:release' project.id %}">Releases</a>
-                </div>
-                <div class="container">
-                    Contains <strong>{{ test_run_stats|get_item:project.id }}</strong> uncompleted test run(s) and
-                    <strong>{{ release_stats|get_item:project.id }}</strong> release(s).
-                </div>
-            </li>
-            {% endfor %}
-
-            <hr>
-            <div>
-                <strong>Test Plans</strong>
-            </div>
-            {% for project in all_project_list %}
-            <li>
-                <a href="/console/project/{{ project.id }}/">{{ project.name }}</a>
-                <div class="container">
-                    <a class="link" href="{% url 'console:test_run' project.id %}">Test Runs</a> |
-                    <a class="link" href="{% url 'console:test_case' project.id %}">Test Cases</a> |
-                    <a class="link" href="{% url 'console:release' project.id %}">Releases</a>
+                    <a class="link" href="#">Releases</a>
                 </div>
                 <div class="container">
                     Contains <strong>{{ test_run_stats|get_item:project.id }}</strong> uncompleted test run(s) and
@@ -66,7 +47,7 @@
                 <div>
                     Projects
                     <li><a class="link" href="{% url 'console:project_create' %}">Add Project</a></li>
-                    <li><a class="link" href="{% url 'console:project_create' %}">View Projects</a></li>
+                    <li><a class="link" href="{% url 'console:project_list' %}">View Projects</a></li>
                 </div>
                 <hr>
                 <div>
@@ -85,6 +66,14 @@
                     Integration
                     <li><a class="link" href="#">Configure JIRA</a></li>
                     <li><a class="link" href="#">Configure Mattermost</a></li>
+                    <li><a class="link" href="#">Configure Jenkins</a></li>
+                </div>
+                <hr>
+                <div>
+                    Updates
+                    <li><a class="link" href="#">Add News</a></li>
+                    <li><a class="link" href="#">View News</a></li>
+                    <li><a class="link" href="#">Subscribe</a></li>
                 </div>
                 <hr>
                 <div>

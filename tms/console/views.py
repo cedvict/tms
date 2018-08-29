@@ -6,7 +6,9 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.db.models.fields.files import FieldFile
 from django.views.generic import FormView
 from django.views.generic.base import TemplateView
-from django.views.generic.edit import CreateView, UpdateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+
 from django.views import generic
 from django.urls import reverse
 
@@ -126,21 +128,6 @@ class MiscView(TemplateView):
     template_name = "console/misc.html"
 
 
-class ProjectView(generic.DetailView):
-    model = Project
-    template_name = 'console/project_overview.html'
-
-    def get_context_data(self, **kwargs):
-        pk = self.kwargs.get("pk")
-        project = Project.objects.get(pk=pk)
-        context = super().get_context_data(**kwargs)
-        context['test_run_list'] = TestRun.objects.filter(project=project)
-        context['test_run_activity_list'] = TestRun.history.filter(project__id=pk)
-        context['test_plan_activity_list'] = TestPlan.history.filter(project__id=pk)
-        context['release_activity_list'] = Release.history.filter(project__id=pk)
-        return context
-
-
 class TestRunView(generic.DetailView):
     model = Project
     template_name = 'console/test_run.html'
@@ -156,26 +143,69 @@ class ReportView(generic.DetailView):
     template_name = 'console/report.html'
 
 
+class ProjectListView(generic.ListView):
+    model = Project
+    template_name_suffix = '_list'
+
+
 class ProjectCreateView(CreateView):
     model = Project
-    success_url = "/console/"
+    template_name_suffix = '_add'
     exclude = ('created_date', 'upd_date')
     fields = ('name', 'description')
+
+    def get_success_url(self):
+        return reverse('console:project_list')
+
+
+class ProjectView(generic.DetailView):
+    model = Project
+    template_name = 'console/project_overview.html'
+
+    def get_context_data(self, **kwargs):
+        pk = self.kwargs.get("pk")
+        project = Project.objects.get(pk=pk)
+        context = super().get_context_data(**kwargs)
+        context['test_run_list'] = TestRun.objects.filter(project=project)
+        context['test_run_activity_list'] = TestRun.history.filter(project__id=pk)
+        context['test_plan_activity_list'] = TestPlan.history.filter(project__id=pk)
+        context['release_activity_list'] = Release.history.filter(project__id=pk)
+        return context
+
+
+class ProjectUpdateView(UpdateView):
+    model = Project
+    fields = ('name', 'description')
+    template_name_suffix = '_update'
+
+    def get_success_url(self):
+        return reverse('console:project_list')
+
+
+class ProjectDeleteView(DeleteView):
+    model = Project
+    template_name_suffix = '_delete'
+    success_url = reverse_lazy('console:project_list')
 
 
 class ReleaseCreateView(CreateView):
     model = Release
-    template_name = 'console/release_add.html'
+    template_name_suffix = '_add'
     exclude = ('created_date', 'upd_date')
     fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
 
     def get_success_url(self):
-        return reverse('console:release', kwargs={'pk': self.kwargs.get("pk")})
+        return reverse('console:release_list', kwargs={'pk': self.kwargs.get("pk")})
 
 
-class ReleaseView(generic.ListView):
+class ReleaseView(generic.DetailView):
     model = Release
-    template_name = 'console/release_list.html'
+    template_name = 'console/release_overview.html'
+
+
+class ReleaseListView(generic.ListView):
+    model = Release
+    template_name_suffix = '_list'
     # paginate_by = 50  # if pagination is desired
 
     def get_context_data(self, **kwargs):
@@ -189,7 +219,7 @@ class ReleaseView(generic.ListView):
 class ReleaseUpdateView(UpdateView):
     model = Release
     fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
-    template_name = 'console/release_update.html'
+    template_name_suffix = '_update'
 
     def get_success_url(self):
         release = Release.objects.get(pk=self.kwargs.get("pk"))

@@ -1,0 +1,10 @@
+<h1>Project List</h1>
+<ul>
+{% for project in project_list %}
+    <li> {{ project }} </li>
+    <a class="link" href="{% url 'console:project_update' project.id %}">Update</a>
+    <a class="link" href="{% url 'console:project_delete' project.id %}">Delete</a>
+{% empty %}
+    <li>No project yet.</li>
+{% endfor %}
+</ul>
