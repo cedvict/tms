@@ -1,6 +1,7 @@
 from django.contrib import admin
 
-from .models import Project, TestPlan, TestRun, Component, TestCase, Role, Tester, TestRunCase, Message, Release, TesterRole
+from .models import Project, TestPlan, TestRun, Component, TestCase, Role, Tester, TestRunCase, Message, Release, \
+    TesterRole, Device
 
 # admin.site.register(Project)
 # admin.site.register(TestPlan)
@@ -72,3 +73,6 @@ admin.site.register(Role)
 admin.site.register(Tester)
 
 admin.site.register(TesterRole)
+
+admin.site.register(Device)
+

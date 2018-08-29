@@ -24,6 +24,7 @@ from .views import (
     ReleaseCreateView,
     ReleaseUpdateView,
     ProjectDeleteView,
+    ReleaseDeleteView,
 )
 
 app_name = 'console'
@@ -52,4 +53,5 @@ urlpatterns = [
     url(r"^project/(?P<pk>\d+)/release/list/$", ReleaseListView.as_view(), name='release_list'),
     url(r"^project/(?P<pk>\d+)/release/add/$", ReleaseCreateView.as_view(), name='release_add'),
     url(r"^release/(?P<pk>\d+)/update/$", ReleaseUpdateView.as_view(), name='release_update'),
+    url(r"^release/(?P<pk>\d+)/delete/$", ReleaseDeleteView.as_view(), name='release_delete'),
 ]

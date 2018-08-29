@@ -283,3 +283,44 @@ class Message(models.Model):
 
     class Meta:
         db_table = 'message_tab'
+
+
+class Device(models.Model):
+    name = models.CharField(max_length=20)
+    description = models.CharField(max_length=200)
+    created_date = models.DateTimeField('date created', auto_now_add=True, blank=True)
+    upd_date = models.DateTimeField('date updated', auto_now=True, blank=True)
+    Tester = models.ForeignKey(Tester, on_delete=models.DO_NOTHING, blank=True, default=None)
+
+    DEVICE_PLATFORM_ANDROID = 0
+    DEVICE_PLATFORM_IOS = 1
+    DEVICE_PLATFORM_OTHERS = 2
+    DEVICE_PLATFORM = (
+        (DEVICE_PLATFORM_ANDROID, 'Android'),
+        (DEVICE_PLATFORM_IOS, 'iOS'),
+        (DEVICE_PLATFORM_OTHERS, 'Others'),
+    )
+
+    os_version = models.CharField(max_length=10)
+    device_platform = models.IntegerField(choices=DEVICE_PLATFORM, default=DEVICE_PLATFORM_ANDROID)
+
+    DEVICE_STATUS_AVAILABLE = 0
+    DEVICE_STATUS_OCCUPIED = 1
+    DEVICE_STATUS_BROKEN = 2
+    DEVICE_STATUS_RETURNED = 3
+    DEVICE_STATUS_CHOICES = (
+        (DEVICE_STATUS_AVAILABLE, 'Available'),
+        (DEVICE_STATUS_OCCUPIED, 'Occupied'),
+        (DEVICE_STATUS_BROKEN, 'Broken'),
+        (DEVICE_STATUS_RETURNED, 'Returned'),
+    )
+
+    device_status = models.IntegerField(choices=DEVICE_STATUS_CHOICES, default=DEVICE_STATUS_AVAILABLE)
+
+    history = HistoricalRecords()
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        db_table = 'device_tab'

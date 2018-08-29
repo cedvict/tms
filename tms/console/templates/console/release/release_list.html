@@ -1,0 +1,11 @@
+<h1>Release List</h1>
+{% csrf_token %}
+<ul>
+    {% for release in release_list %}
+    <li> {{ release }}</li>
+    <a class="link" href="{% url 'console:release_update' release.id %}">Update</a>
+    <a class="link" href="{% url 'console:release_delete' release.id %}">Delete</a>
+    {% empty %}
+    <li>No release yet.</li>
+    {% endfor %}
+</ul>
