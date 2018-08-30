@@ -7,34 +7,42 @@ from console.models import TestCase, Project
 
 class TestCaseCreateView(CreateView):
     model = TestCase
-    success_url = "/release"
-    template_name = 'console/release/release_add.html'
+    template_name = 'console/test_case/test_case_add.html'
     exclude = ('created_date', 'upd_date')
-    fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
+    fields = (
+        'project', 'name', 'description', 'test_case_type', 'estimate_in_minute', 'project', 'component',
+        'test_case_tier',
+        'test_case_platform', 'preconditions', 'test_steps', 'expected_result')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        pk = self.kwargs.get("pk")
+        context['project'] = Project.objects.get(pk=pk)
+        return context
 
     def get_success_url(self):
-        return reverse('console:release_list', kwargs={'pk': self.kwargs.get("pk")})
+        return reverse('console:test_case_overview', kwargs={'pk': self.kwargs.get("pk")})
 
 
-class TestCaseView(generic.DetailView):
+# class TestCaseView(generic.DetailView):
+#     model = TestCase
+#     template_name = 'console/release_overview.html'
+
+
+class TestCaseOverviewView(generic.ListView):
     model = TestCase
-    template_name = 'console/release_overview.html'
-
-
-class TestCaseListView(generic.ListView):
-    model = TestCase  # shorthand for setting queryset = models.Car.objects.all()
-    template_name = 'console/test_case.html'  # optional (the default is app_name/modelNameInLowerCase_list.html; which will look into your templates folder for that path and file)
-    context_object_name = "test_case_list"  # default is object_list as well as model's_verbose_name_list and/or model's_verbose_name_plural_list, if defined in the model's inner Meta class
+    template_name = 'console/test_case.html'
+    context_object_name = 'test_case_list'
     paginate_by = 2
 
     def get_queryset(self, **kwargs):
-        pk = self.kwargs.get("pk")
+        pk = self.kwargs.get('pk')
         project = Project.objects.get(pk=pk)
         return TestCase.objects.filter(project=project)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        pk = self.kwargs.get("pk")
+        pk = self.kwargs.get('pk')
         context['project'] = Project.objects.get(pk=pk)
         return context
 
@@ -44,18 +52,35 @@ class TestCaseListView(generic.ListView):
 
 class TestCaseUpdateView(UpdateView):
     model = TestCase
-    fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
+    exclude = ('created_date', 'upd_date')
+    fields = (
+        'project', 'name', 'description', 'test_case_type', 'estimate_in_minute', 'project', 'component',
+        'test_case_tier',
+        'test_case_platform', 'preconditions', 'test_steps', 'expected_result')
     template_name = 'console/test_case/test_case_update.html'
 
-    # def get_success_url(self):
-    #     release = Release.objects.get(pk=self.kwargs.get("pk"))
-    #     return reverse('console:release_list', kwargs={'pk': release.project.id})
+    def get_success_url(self):
+        test_case = TestCase.objects.get(pk=self.kwargs.get("pk"))
+        return reverse('console:test_case_overview', kwargs={'pk': test_case.project.id})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        test_case = TestCase.objects.get(pk=self.kwargs.get("pk"))
+        context['project'] = Project.objects.get(pk=test_case.project_id)
+        return context
 
 
 class TestCaseDeleteView(DeleteView):
     model = TestCase
     template_name = 'console/test_case/test_case_delete.html'
-    #
-    # def get_success_url(self):
-    #     release = Release.objects.get(pk=self.kwargs.get("pk"))
-    #     return reverse('console:test_case_list', kwargs={'pk': release.project.id})
+
+    def get_success_url(self):
+        test_case = TestCase.objects.get(pk=self.kwargs.get("pk"))
+        return reverse('console:test_case_overview', kwargs={'pk': test_case.project.id})
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        test_case = TestCase.objects.get(pk=self.kwargs.get("pk"))
+        context['project'] = Project.objects.get(pk=test_case.project_id)
+        return context
+

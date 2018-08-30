@@ -6,9 +6,10 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <h1>Test Case List</h1>
+            <div>
+                <strong>Test Case</strong>
+            </div>
             {% csrf_token %}
-            {# .... **Normal content list, maybe a table** .... #}
             {% if test_case_list %}
             <table id="tb_cases">
                 <tr>
@@ -35,6 +36,9 @@
                     <td>{{ case.preconditions }}</td>
                     <td>{{ case.test_steps }}</td>
                     <td>{{ case.expected_result }}</td>
+                    <td><a class="link" href="{% url 'console:test_case_update' case.id %}">Update</a></td>
+                    <td>|</td>
+                    <td><a class="link" href="{% url 'console:test_case_delete' case.id %}">Delete</a></td>
                 </tr>
                 {% endfor %}
             </table>
@@ -58,7 +62,7 @@
             <h3>Test Case</h3>
             <p>No test cases found!!! :(</p>
             {% endif %}
-            {# .... **More content, footer, etc.** .... #}
+            <hr>
 
 
         </div>
@@ -66,7 +70,15 @@
             <div>
                 <strong>Quick Filter</strong>
                 <div>
-                    implement search filter here
+                    <li><a class="link" href="#">implement search filter here</a></li>
+                </div>
+                <hr>
+            </div>
+            <div>
+                <div>
+                    <strong>Actions</strong>
+                    <li><a class="link" href="{% url 'console:test_case_create' project.id %}">Add Test Case</a></li>
+                    <li><a class="link" href="#">Import</a></li>
                 </div>
                 <hr>
             </div>

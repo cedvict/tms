@@ -16,7 +16,7 @@ from console.project.project_views import ProjectListView, ProjectCreateView, Pr
 from console.release.release_views import ReleaseCreateView, ReleaseListView, ReleaseUpdateView, ReleaseDeleteView
 from console.device.device_views import DeviceCreateView, DeviceListView, DeviceUpdateView, DeviceDeleteView
 from console.message.message_views import MessageCreateView, MessageListView, MessageUpdateView, MessageDeleteView
-from console.test_case.test_case_views import TestCaseCreateView, TestCaseListView, TestCaseUpdateView, TestCaseDeleteView
+from console.test_case.test_case_views import TestCaseCreateView, TestCaseOverviewView, TestCaseUpdateView, TestCaseDeleteView
 
 app_name = 'console'
 urlpatterns = [
@@ -62,7 +62,7 @@ urlpatterns = [
     url(r"^project/(?P<pk>\d+)/test_run/$", TestRunView.as_view(), name='test_run'),
 
     # url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseView.as_view(), name='test_case'),
-    url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseListView.as_view(), name='test_case_overview'),
+    url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseOverviewView.as_view(), name='test_case_overview'),
     url(r"^project/(?P<pk>\d+)/test_case/add/$", TestCaseCreateView.as_view(), name='test_case_create'),
     url(r"^test_case/(?P<pk>\d+)/update/$", TestCaseUpdateView.as_view(), name='test_case_update'),
     url(r"^test_case/(?P<pk>\d+)/delete/$", TestCaseDeleteView.as_view(), name='test_case_delete'),

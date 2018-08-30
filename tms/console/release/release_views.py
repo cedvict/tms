@@ -7,13 +7,19 @@ from console.models import Release, Project
 
 class ReleaseCreateView(CreateView):
     model = Release
-    success_url = "/release"
+    # success_url = "/release"
     template_name = 'console/release/release_add.html'
     exclude = ('created_date', 'upd_date')
     fields = ('project', 'name', 'release_note', 'release_status', 'release_platform')
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        pk = self.kwargs.get("pk")
+        context['project'] = Project.objects.get(pk=pk)
+        return context
+
     def get_success_url(self):
-        return reverse('console:release_list', kwargs={'pk': self.kwargs.get("pk")})
+        return reverse('console:release_list', kwargs={self.kwargs.get('pk')})
 
 
 class ReleaseView(generic.DetailView):
