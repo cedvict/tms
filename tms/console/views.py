@@ -13,6 +13,9 @@ from .models import Project, Message, Release, TestRun
 
 from django.template.defaulttags import register
 
+from console.base.base import TEST_RUN_STATUS_ACTIVE, TEST_RUN_STATUS_CREATED, TEST_RUN_STATUS_BLOCKED, \
+    RELEASE_STATUS_CREATED, RELEASE_STATUS_ACTIVE
+
 
 @register.filter
 def get_item(dictionary, key):
@@ -39,16 +42,16 @@ class DashboardView(TemplateView):
         test_run_stats = {}
         for p in projects:
             test_run_stats[p.id] = TestRun.objects.filter(Q(project__id=p.id),
-                                                          Q(test_run_status=TestRun.TEST_RUN_STATUS_CREATED) | Q(
-                                                              test_run_status=TestRun.TEST_RUN_STATUS_ACTIVE) | Q(
-                                                              test_run_status=TestRun.TEST_RUN_STATUS_BLOCKED)).count()
+                                                          Q(test_run_status=TEST_RUN_STATUS_CREATED) | Q(
+                                                              test_run_status=TEST_RUN_STATUS_ACTIVE) | Q(
+                                                              test_run_status=TEST_RUN_STATUS_BLOCKED)).count()
         context['test_run_stats'] = test_run_stats
 
         release_stats = {}
         for p in projects:
             release_stats[p.id] = Release.objects.filter(Q(project__id=p.id),
-                                                         Q(release_status=Release.RELEASE_STATUS_CREATED) | Q(
-                                                             release_status=Release.RELEASE_STATUS_ACTIVE)).count()
+                                                         Q(release_status=RELEASE_STATUS_CREATED) | Q(
+                                                             release_status=RELEASE_STATUS_ACTIVE)).count()
         context['release_stats'] = release_stats
         return context
 

@@ -23,7 +23,7 @@ class TestCaseView(generic.DetailView):
 
 class TestCaseListView(generic.ListView):
     model = TestCase  # shorthand for setting queryset = models.Car.objects.all()
-    template_name = 'console/test_case/test_case_list.html'  # optional (the default is app_name/modelNameInLowerCase_list.html; which will look into your templates folder for that path and file)
+    template_name = 'console/test_case.html'  # optional (the default is app_name/modelNameInLowerCase_list.html; which will look into your templates folder for that path and file)
     context_object_name = "test_case_list"  # default is object_list as well as model's_verbose_name_list and/or model's_verbose_name_plural_list, if defined in the model's inner Meta class
     paginate_by = 2
 
@@ -31,6 +31,15 @@ class TestCaseListView(generic.ListView):
         pk = self.kwargs.get("pk")
         project = Project.objects.get(pk=pk)
         return TestCase.objects.filter(project=project)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        pk = self.kwargs.get("pk")
+        context['project'] = Project.objects.get(pk=pk)
+        return context
+
+    class Meta:
+        ordering = ["-name"]
 
 
 class TestCaseUpdateView(UpdateView):

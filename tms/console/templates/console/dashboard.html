@@ -29,7 +29,7 @@
                 <a href="{% url 'console:overview' project.id %}">{{ project.name }}</a>
                 <div class="container">
                     <a class="link" href="{% url 'console:test_run' project.id %}">Test Runs</a> |
-                    <a class="link" href="{% url 'console:test_case' project.id %}">Test Cases</a> |
+                    <a class="link" href="{% url 'console:test_case_overview' project.id %}">Test Cases</a> |
                     <a class="link" href="#">Releases</a>
                 </div>
                 <div class="container">

@@ -36,8 +36,6 @@ urlpatterns = [
     url(r"^project/(?P<pk>\d+)/update/$", ProjectUpdateView.as_view(), name='project_update'),
     url(r"^project/(?P<pk>\d+)/delete/$", ProjectDeleteView.as_view(), name='project_delete'),
 
-    url(r"^project/(?P<pk>\d+)/test_run/$", TestRunView.as_view(), name='test_run'),
-    url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseView.as_view(), name='test_case'),
     url(r"^project/(?P<pk>\d+)/report/$", ReportView.as_view(), name='report'),
 
     # url(r"^project/(?P<pk>\d+)/release/$", ReleaseView.as_view(), name='release'),
@@ -61,7 +59,10 @@ urlpatterns = [
     # url(r"^test_case/(?P<pk>\d+)/update/$", TestCaseUpdateView.as_view(), name='test_case_update'),
     # url(r"^test_case/(?P<pk>\d+)/delete/$", TestCaseDeleteView.as_view(), name='test_case_delete'),
 
-    url(r"^project/(?P<pk>\d+)/test_case/list/$", TestCaseListView.as_view(), name='test_case_list'),
+    url(r"^project/(?P<pk>\d+)/test_run/$", TestRunView.as_view(), name='test_run'),
+
+    # url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseView.as_view(), name='test_case'),
+    url(r"^project/(?P<pk>\d+)/test_case/$", TestCaseListView.as_view(), name='test_case_overview'),
     url(r"^project/(?P<pk>\d+)/test_case/add/$", TestCaseCreateView.as_view(), name='test_case_create'),
     url(r"^test_case/(?P<pk>\d+)/update/$", TestCaseUpdateView.as_view(), name='test_case_update'),
     url(r"^test_case/(?P<pk>\d+)/delete/$", TestCaseDeleteView.as_view(), name='test_case_delete'),

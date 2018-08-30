@@ -1,10 +1,22 @@
 <h1>Project List</h1>
-<ul>
-{% for project in project_list %}
-    <li> {{ project }} </li>
-    <a class="link" href="{% url 'console:project_update' project.id %}">Update</a>
-    <a class="link" href="{% url 'console:project_delete' project.id %}">Delete</a>
-{% empty %}
+<table id="tb_cases">
+    <tr>
+        <td>Name</td>
+        <td>Description</td>
+        <td>created_date</td>
+        <td>upd_date</td>
+    </tr>
+    {% for project in project_list %}
+    <tr>
+        <td>{{ project.name }}</td>
+        <td>{{ project.description }}</td>
+        <td>{{ project.created_date }}</td>
+        <td>{{ project.upd_date }}</td>
+        <td><a class="link" href="{% url 'console:project_update' project.id %}">Update</a></td>
+        <td><a class="link" href="{% url 'console:project_delete' project.id %}">Delete</a></td>
+    </tr>
+    {% empty %}
     <li>No project yet.</li>
-{% endfor %}
-</ul>
+
+    {% endfor %}
+</table>

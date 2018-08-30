@@ -6,47 +6,61 @@
 <div class="container">
     <div class="row">
         <div class="col-md-9">
-            <div>
-                <strong>Test Progress</strong>
+            <h1>Test Case List</h1>
+            {% csrf_token %}
+            {# .... **Normal content list, maybe a table** .... #}
+            {% if test_case_list %}
+            <table id="tb_cases">
+                <tr>
+                    <td>Name</td>
+                    <td>Description</td>
+                    <td>Test Type</td>
+                    <td>Effort (min)</td>
+                    <td>Component</td>
+                    <td>Tier</td>
+                    <td>Platform</td>
+                    <td>Pre-Conditions</td>
+                    <td>Test Steps</td>
+                    <td>Expected Result</td>
+                </tr>
+                {% for case in test_case_list %}
+                <tr>
+                    <td>{{ case.name }}</td>
+                    <td>{{ case.description }}</td>
+                    <td>{{ case.test_case_type }}</td>
+                    <td>{{ case.estimate_in_minute }}</td>
+                    <td>{{ case.component }}</td>
+                    <td>{{ case.test_case_tier }}</td>
+                    <td>{{ case.test_case_platform }}</td>
+                    <td>{{ case.preconditions }}</td>
+                    <td>{{ case.test_steps }}</td>
+                    <td>{{ case.expected_result }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {# .... **Now the pagination section** .... #}
+            {% if is_paginated %}
+            <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
             </div>
-            <hr>
-            <div>
-                <strong>Test Runs</strong>
-            </div>
-            {% for test_run in test_run_list %}
-            <div>
-                <li>{{ test_run.name }} By TESTER_NAME on MM/DD/YYYY</li>
-            </div>
+            {% endif %}
+            {% else %}
+            <h3>Test Case</h3>
+            <p>No test cases found!!! :(</p>
+            {% endif %}
+            {# .... **More content, footer, etc.** .... #}
 
-            {% endfor %}
 
-            <hr>
-            <div>
-                <strong>Activities</strong>
-            </div>
-            <strong>Test Runs Activities</strong>
-            {% for test_run in test_run_activity_list %}
-            <div>
-                <li>Test Run: {{ test_run.name }} | Status Changed: {{ test_run.test_run_status }} | Time: {{ test_run.upd_date }}
-                </li>
-            </div>
-            {% endfor %}
-            <strong>Test Plan Activities</strong>
-            {% for test_plan in test_plan_activity_list %}
-            <div>
-                <li>Test Plan: {{ test_plan.name }} | Status Changed: {{ test_plan.test_plan_status }} | Time: {{ test_plan.upd_date }}
-                </li>
-            </div>
-            {% endfor %}
-            <strong>Releases Activities</strong>
-            {% for release in release_activity_list %}
-            <div>
-                <li>Release: {{ project.name }} {{ release.name }} {{ release.release_platform }} | Status Changed: {{ release.release_status }} | Time: {{ release.upd_date }}
-                </li>
-            </div>
-            {% endfor %}
-
-            <hr>
         </div>
         <div class="col-md-3">
             <div>

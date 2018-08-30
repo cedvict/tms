@@ -3,10 +3,30 @@
 {# .... **Normal content list, maybe a table** .... #}
 {% if test_case_list %}
     <table id="tb_cases">
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Test Type</td>
+            <td>Effort (min)</td>
+            <td>Component</td>
+            <td>Tier</td>
+            <td>Platform</td>
+            <td>Pre-Conditions</td>
+            <td>Test Steps</td>
+            <td>Expected Result</td>
+        </tr>
         {% for case in test_case_list %}
             <tr>
-                <td>{{ case.name }} 123</td>
-                <!--<td><a href="/car/{{ car.id }}/" class="see_detail">detail</a></td>-->
+                <td>{{ case.name }}</td>
+                <td>{{ case.description }}</td>
+                <td>{{ case.test_case_type }}</td>
+                <td>{{ case.estimate_in_minute }}</td>
+                <td>{{ case.component }}</td>
+                <td>{{ case.test_case_tier }}</td>
+                <td>{{ case.test_case_platform }}</td>
+                <td>{{ case.preconditions }}</td>
+                <td>{{ case.test_steps }}</td>
+                <td>{{ case.expected_result }}</td>
             </tr>
         {% endfor %}
     </table>
