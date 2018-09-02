@@ -1,0 +1,61 @@
+{% extends 'base/base_modal.html' %}
+{% load menu %}
+{% block content %}
+{% generate_menu %}
+{% if not user.is_anonymous %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            {% include "base/menu.html" %}
+            <h4>
+                <strong>{{ project.name }} - detail</strong>
+            </h4>
+            <p>TODO: show a bar char about how is testing going on</p>
+
+        </div>
+    </div>
+
+    {% endif %}
+    {% endblock content %}
+
+    {% block extrascripts %}
+    <script type="text/javascript">
+    $(function () {
+      // Log in & Sign up buttons
+      $(".login-btn").modalForm({formURL: "{% url 'login' %}", successURL: "/"});
+
+      // Create news button
+      $(".create-news").modalForm({formURL: "{% url 'create_news' %}", successURL: "/"});
+
+      // Update news buttons
+      $(".update-news").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "/"});
+      });
+
+      // Delete news buttons
+      $(".delete-news").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "/"});
+      });
+
+      // Create project button
+      $(".create-project").modalForm({formURL: "{% url 'create_project' %}", successURL: "/"});
+
+      // Update project buttons
+      $(".update-project").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "/"});
+      });
+
+      // Delete project buttons
+      $(".delete-project").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "/"});
+      });
+
+    });
+
+
+
+
+
+
+    </script>
+    {% endblock extrascripts %}

@@ -1,5 +1,11 @@
 Django>=2.1
 Sphinx
 sphinx_rtd_theme
-django-bootstrap3
+# django-bootstrap3
 django-simple-history
+# django-bootstrap-modal-forms
+# Django==2.1
+django-bootstrap-modal-forms==1.2.1
+django-widget-tweaks==1.4.2
+pytz==2018.5
+django-simple-menu

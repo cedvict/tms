@@ -2,6 +2,16 @@ from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
-    path('console/', include('console.urls')),
     path('admin/', admin.site.urls),
+    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('news/', include('news.urls')),
+    path('news/', include('django.contrib.auth.urls')),
+    path('test_cases/', include('test_cases.urls')),
+    path('test_cases/', include('django.contrib.auth.urls')),
+    path('device/', include('devices.urls')),
+    path('device/', include('django.contrib.auth.urls')),
+    path('', include('projects.urls')),
 ]
+
+

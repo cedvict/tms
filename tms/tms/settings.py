@@ -30,9 +30,19 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'bootstrap3',
+    'test_cases',
+    'test_plans',
+    'devices',
+    'test_runs',
+    'releases',
+    'news',
+    'menu',
     'simple_history',
-    'console.apps.ConsoleConfig',
+    'accounts',
+    'books',
+    'projects',
+    'bootstrap_modal_forms',
+    'widget_tweaks',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,3 +131,14 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static_files")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_files")
+
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'

@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-12 mb-3">
+        {% if does_enter_a_project != True %}
+        {% with menu=menus.dashboard %}{% include "base/_menu.html" %}{% endwith %}
+        {% else %}
+        {% with menu=menus.main %}{% include "base/_menu.html" %}{% endwith %}
+        {% endif %}
+    </div>
+</div>

@@ -2,16 +2,204 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="947d2edf-8d98-4086-9bda-31403944ff93" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/accounts/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accounts/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/books/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/migrations/0002_auto_20180902_1605.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/devices/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/menus.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/migrations/0002_component.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/projects/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/releases/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/jquery-3.2.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/assets/js/popper.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/accounts/signup.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/_footer.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/_header.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/_menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/base_modal.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base/menu.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books/create_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books/delete_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books/read_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/books/update_book.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/dashboard.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/devices/create_device.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/devices/delete_device.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/devices/device_index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/devices/read_device.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/devices/update_device.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/my_work.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/news/create_news.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/news/delete_news.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/news/read_news.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/news/update_news.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/projects/create_project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/projects/delete_project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/projects/project_detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/projects/project_overview.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/projects/read_project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/projects/update_project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/registration/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test_cases/create_test_case.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test_cases/delete_test_case.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test_cases/read_project.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/test_cases/update_test_case.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_cases/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/migrations/0002_auto_20180902_1506.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_plans/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_runs/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/menus.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/release/release_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/console/release/release_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case.html" beforeDir="false" afterPath="$PROJECT_DIR$/console/templates/console/test_case.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/test_case_add.html" beforeDir="false" afterPath="$PROJECT_DIR$/console/templates/console/test_case/test_case_add.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/test_case_delete.html" beforeDir="false" afterPath="$PROJECT_DIR$/console/templates/console/test_case/test_case_delete.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/test_case_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/console/templates/console/test_case/to-be-deleted-test_case_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/test_case_update.html" beforeDir="false" afterPath="$PROJECT_DIR$/console/templates/console/test_case/test_case_update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/test_case/test_case_views.py" beforeDir="false" afterPath="$PROJECT_DIR$/console/test_case/test_case_views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/console/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/apps.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/base/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/base/base.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/base.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/device/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/base/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/device/device_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/example/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/example/example_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/forms.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/message/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/books/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/message/message_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/0001_initial.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/0002_auto_20180829_2133.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/0003_auto_20180829_2134.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/0004_historicaltestrun.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_plans/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/0005_historicaltestcase.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_cases/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/migrations/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/project/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/devices/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/project/project_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/release/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/release/release_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/static/console/base.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/console/base.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/base/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/base/base_dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/base/bootstrap.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/dashboard.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/device/device_add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/device/device_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/device/device_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/device/device_update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/form.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/form_by_field.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/form_horizontal.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/form_inline.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/form_with_files.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/formset.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/misc.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/example/pagination.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/message/message_add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/message/message_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/message/message_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/message/message_update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/overview.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/project/project_add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/project/project_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/project/project_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/project/project_update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/release/release_add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/release/release_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/release/release_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/release/release_update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/report.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/test_case_add.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/test_case_delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/test_case_update.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/test_case/to-be-deleted-test_case_list.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/templates/console/test_run.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/test_case/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/news/migrations/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/test_case/test_case_views.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/accounts/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/urls.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/console/views.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tms/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/tms/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tms/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/tms/urls.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -70,39 +258,44 @@
     <session id="-1591087640">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="1" />
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.7" value="1" />
+          <entry key="project.opened" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="166" />
-          <entry key="py" value="95" />
-          <entry key="txt" value="2" />
+          <entry key="css" value="1" />
+          <entry key="html" value="337" />
+          <entry key="js" value="1" />
+          <entry key="py" value="431" />
+          <entry key="txt" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="166" />
-          <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="95" />
+          <entry key="CSS" value="1" />
+          <entry key="HTML" value="337" />
+          <entry key="JavaScript" value="1" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="Python" value="431" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="72" />
-          <entry key="html" value="2630" />
-          <entry key="py" value="3644" />
-          <entry key="txt" value="1" />
+          <entry key="dummy" value="89" />
+          <entry key="html" value="5068" />
+          <entry key="py" value="5801" />
+          <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="HTML" value="2630" />
-          <entry key="PLAIN_TEXT" value="73" />
-          <entry key="Python" value="3644" />
+          <entry key="HTML" value="5068" />
+          <entry key="PLAIN_TEXT" value="104" />
+          <entry key="Python" value="5801" />
         </counts>
       </usages-collector>
     </session>
@@ -110,19 +303,22 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/templates/console/overview.html">
+        <entry file="file://$PROJECT_DIR$/tms/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="633">
-              <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
+            <state relative-caret-position="195">
+              <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#32#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/test_case/test_case_views.py">
+        <entry file="file://$PROJECT_DIR$/projects/menus.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+            <state relative-caret-position="120">
+              <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
               <folding>
                 <element signature="e#0#31#0" expanded="true" />
               </folding>
@@ -131,76 +327,85 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/release/release_views.py">
+        <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
+            <state relative-caret-position="270">
+              <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/devices/read_device.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devices/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="16" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="16" />
               <folding>
-                <element signature="e#0#31#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devices/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="451">
+              <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+              <folding>
+                <element signature="e#9#45#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/devices/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+              <folding>
+                <element signature="e#9#37#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/projects/urls.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+              <folding>
+                <element signature="e#9#37#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/console/templates/console/release/release_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/templates/console/test_case.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/templates/console/base/base.html">
+        <entry file="file://$PROJECT_DIR$/templates/devices/device_index.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="225">
-              <caret line="15" column="74" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="74" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/templates/console/test_case/test_case_add.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/templates/console/test_case/test_case_delete.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/templates/console/test_case/test_case_update.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="195">
-              <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="75" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/console/base/base.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="54" selection-start-line="54" selection-end-line="54" />
+              <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
             </state>
           </provider>
         </entry>
@@ -217,20 +422,48 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>app_list</find>
-      <find>do_nothing</find>
       <find>db_tale</find>
       <find>min_va</find>
-      <find>p</find>
       <find>release</find>
       <find>=True</find>
-      <find>overview</find>
       <find>overvie</find>
       <find>estimate</find>
+      <find>tester</find>
+      <find>user</find>
+      <find>book</find>
+      <find>TEMPLATE_CONTEXT_PROCESSORS</find>
+      <find>create_pro</find>
+      <find>create</find>
+      <find>.html</find>
+      <find>index</find>
+      <find>static</find>
+      <find>if</find>
+      <find>projec</find>
+      <find>p</find>
+      <find>case</find>
+      <find>TestCase</find>
+      <find>overview</find>
       <find>Project</find>
       <find>project</find>
-      <find>tester</find>
+      <find>device</find>
+      <find>Device</find>
+      <find>test_run_stats</find>
+      <find>news</find>
+      <find>News</find>
+      <find>new</find>
+      <find>system</find>
     </findStrings>
+    <replaceStrings>
+      <replace>test_run</replace>
+      <replace>TestRun</replace>
+      <replace>Devices</replace>
+      <replace>Release</replace>
+      <replace>release</replace>
+      <replace>TestPlan</replace>
+      <replace>test_plan</replace>
+      <replace>Device</replace>
+      <replace>device</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -238,57 +471,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/console/templates/console/base.html" />
-        <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/tms/settings.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/formset.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/release_form.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/release_update.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/release_list.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/project_delete.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/project_list.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/release/release_delete.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/release/release_list.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/release/release_update.html" />
-        <option value="$PROJECT_DIR$/console/views/release_views.py" />
-        <option value="$PROJECT_DIR$/console/views/project_views.py" />
-        <option value="$PROJECT_DIR$/console/release/release_view.py" />
-        <option value="$PROJECT_DIR$/console/device/project_views.py" />
-        <option value="$PROJECT_DIR$/console/device/device_views.py" />
-        <option value="$PROJECT_DIR$/console/example/example_views.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/base/base_dashboard.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/report.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/test_run.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/message/message_list.html" />
-        <option value="$PROJECT_DIR$/console/message/message_views.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/home.html" />
-        <option value="$PROJECT_DIR$/console/migrations/0020_auto_20180829_1826.py" />
-        <option value="$PROJECT_DIR$/console/migrations/0022_auto_20180829_2040.py" />
-        <option value="$PROJECT_DIR$/console/migrations/0021_auto_20180829_1927.py" />
-        <option value="$PROJECT_DIR$/console/migrations/0020_auto_20180829_2116.py" />
-        <option value="$PROJECT_DIR$/console/migrations/0020_auto_20180829_2119.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/project_overview.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/example/pagination.html" />
-        <option value="$PROJECT_DIR$/console/templates/list.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/list.html" />
-        <option value="$PROJECT_DIR$/console/test_case/test_case.py" />
-        <option value="$PROJECT_DIR$/console/admin.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/test_case/test_case_list.html" />
+        <option value="$PROJECT_DIR$/templates/test_cases/create_test_case.html" />
+        <option value="$PROJECT_DIR$/templates/test_cases/delete_test_case.html" />
+        <option value="$PROJECT_DIR$/templates/test_cases/update_test_case.html" />
+        <option value="$PROJECT_DIR$/projects/models.py" />
+        <option value="$PROJECT_DIR$/test_cases/models.py" />
+        <option value="$PROJECT_DIR$/templates/projects/read_project.html" />
+        <option value="$PROJECT_DIR$/projects/admin.py" />
+        <option value="$PROJECT_DIR$/test_cases/admin.py" />
+        <option value="$PROJECT_DIR$/test_runs/admin.py" />
+        <option value="$PROJECT_DIR$/test_runs/apps.py" />
+        <option value="$PROJECT_DIR$/test_runs/forms.py" />
+        <option value="$PROJECT_DIR$/test_runs/views.py" />
+        <option value="$PROJECT_DIR$/test_runs/urls.py" />
+        <option value="$PROJECT_DIR$/templates/projects/project_overview.html" />
+        <option value="$PROJECT_DIR$/templates/projects/project_detail.html" />
+        <option value="$PROJECT_DIR$/templates/base/_menu.html" />
+        <option value="$PROJECT_DIR$/templates/base/_header.html" />
         <option value="$PROJECT_DIR$/console/models.py" />
-        <option value="$PROJECT_DIR$/console/views.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/project/project_list.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/device/device_list.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/base/base.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/dashboard.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/overview.html" />
-        <option value="$PROJECT_DIR$/console/urls.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/test_case.html" />
-        <option value="$PROJECT_DIR$/console/release/release_views.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/test_case/test_case_add.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/test_case/test_case_update.html" />
-        <option value="$PROJECT_DIR$/console/templates/console/test_case/test_case_delete.html" />
-        <option value="$PROJECT_DIR$/console/test_case/test_case_views.py" />
-        <option value="$PROJECT_DIR$/console/templates/console/release/release_add.html" />
+        <option value="$PROJECT_DIR$/devices/admin.py" />
+        <option value="$PROJECT_DIR$/devices/apps.py" />
+        <option value="$PROJECT_DIR$/devices/forms.py" />
+        <option value="$PROJECT_DIR$/releases/admin.py" />
+        <option value="$PROJECT_DIR$/releases/apps.py" />
+        <option value="$PROJECT_DIR$/releases/forms.py" />
+        <option value="$PROJECT_DIR$/releases/models.py" />
+        <option value="$PROJECT_DIR$/releases/urls.py" />
+        <option value="$PROJECT_DIR$/releases/views.py" />
+        <option value="$PROJECT_DIR$/test_plans/admin.py" />
+        <option value="$PROJECT_DIR$/test_plans/apps.py" />
+        <option value="$PROJECT_DIR$/test_plans/urls.py" />
+        <option value="$PROJECT_DIR$/test_plans/forms.py" />
+        <option value="$PROJECT_DIR$/test_plans/views.py" />
+        <option value="$PROJECT_DIR$/tms/settings.py" />
+        <option value="$PROJECT_DIR$/test_runs/models.py" />
+        <option value="$PROJECT_DIR$/test_plans/models.py" />
+        <option value="$PROJECT_DIR$/templates/dashboard.html" />
+        <option value="$PROJECT_DIR$/templates/device_management.html" />
+        <option value="$PROJECT_DIR$/templates/my_work.html" />
+        <option value="$PROJECT_DIR$/templates/system_log.html" />
+        <option value="$PROJECT_DIR$/templates/devices/create_device.html" />
+        <option value="$PROJECT_DIR$/templates/devices/delete_device.html" />
+        <option value="$PROJECT_DIR$/devices/models.py" />
+        <option value="$PROJECT_DIR$/tms/urls.py" />
+        <option value="$PROJECT_DIR$/devices/urls.py" />
+        <option value="$PROJECT_DIR$/devices/views.py" />
+        <option value="$PROJECT_DIR$/templates/devices/update_device.html" />
+        <option value="$PROJECT_DIR$/templates/devices/read_device.html" />
+        <option value="$PROJECT_DIR$/projects/menus.py" />
+        <option value="$PROJECT_DIR$/projects/views.py" />
+        <option value="$PROJECT_DIR$/projects/urls.py" />
+        <option value="$PROJECT_DIR$/templates/devices/device_index.html" />
       </list>
     </option>
   </component>
@@ -304,7 +537,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -315,100 +547,45 @@
             <path>
               <item name="tms" type="b2602c69:ProjectViewProjectNode" />
               <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
+              <item name="devices" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tms" type="b2602c69:ProjectViewProjectNode" />
               <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
+              <item name="projects" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tms" type="b2602c69:ProjectViewProjectNode" />
               <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
               <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="release" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="base" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="release" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="test_case" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="console" type="462c0819:PsiDirectoryNode" />
-              <item name="test_case" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="tms" type="b2602c69:ProjectViewProjectNode" />
-              <item name="tms" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value=":test_case&#9;null&#9;null&#10;test_case&#9;FILE&#9;file:///Users/huanglh/work/tms/tms/console/test_case/test_case_views.py&#10;&quot;overview&#9;null&#9;null&#10;estimate&#9;null&#9;null" />
+    <property name="SearchEverywhereHistoryKey" value="index&#9;null&#9;null&#10;:test_case&#9;null&#9;null&#10;test_case&#9;FILE&#9;file:///Users/huanglh/work/tms/tms/console/test_case/test_case_views.py&#10;&quot;overview&#9;null&#9;null&#10;estimate&#9;null&#9;null" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/console/templates/console" />
-      <recent name="$PROJECT_DIR$/console/templates/console/base" />
-      <recent name="$PROJECT_DIR$/console/templates/console/example" />
-      <recent name="$PROJECT_DIR$/console/templates/console/project" />
-      <recent name="$PROJECT_DIR$/console/templates/console/release" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/console/base/base.py" />
-      <recent name="$PROJECT_DIR$/console" />
-      <recent name="$PROJECT_DIR$/console/templates/console" />
-      <recent name="$PROJECT_DIR$/console/device" />
-      <recent name="$PROJECT_DIR$/console/views" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/test_plans" />
+      <recent name="$PROJECT_DIR$/releases" />
+      <recent name="$PROJECT_DIR$/devices" />
+      <recent name="$PROJECT_DIR$/templates/projects" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/templates/devices" />
+      <recent name="$PROJECT_DIR$/base" />
+      <recent name="$PROJECT_DIR$/templates/base" />
+      <recent name="$PROJECT_DIR$/templates/projects" />
+      <recent name="$PROJECT_DIR$/merlion" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -438,14 +615,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.22649573" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4989796" visible="true" weight="0.22893773" />
       <window_info id="Structure" order="1" sideWeight="0.50102043" side_tool="true" weight="0.22649573" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Version Control" order="0" />
-      <window_info anchor="bottom" id="Python Console" order="1" />
+      <window_info anchor="bottom" id="Python Console" order="1" weight="0.32959184" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Message" order="3" />
       <window_info anchor="bottom" id="Find" order="4" weight="0.32857144" />
@@ -454,362 +629,408 @@
       <window_info anchor="bottom" id="Cvs" order="7" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="8" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="9" />
+      <window_info anchor="bottom" id="Messages" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Terminal" order="3" side_tool="true" visible="true" weight="0.2002442" />
+      <window_info anchor="right" id="Terminal" order="3" side_tool="true" visible="true" weight="0.2887668" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/console/templates/console/message/message_delete.html">
+    <entry file="file://$PROJECT_DIR$/devices/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/message/message_list.html">
+    <entry file="file://$PROJECT_DIR$/devices/admin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
-          <caret line="5" column="79" lean-forward="true" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/message/message_update.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/message/message_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" lean-forward="true" selection-start-line="38" selection-end-line="38" />
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/0020_auto_20180829_1826.py">
+    <entry file="file://$PROJECT_DIR$/devices/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/0022_auto_20180829_2040.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/0021_auto_20180829_1927.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/0020_auto_20180829_2116.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="10" lean-forward="true" selection-start-line="31" selection-start-column="10" selection-end-line="31" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/0020_auto_20180829_2119.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/0020_auto_20180829_2115.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="31" column="31" lean-forward="true" selection-start-line="31" selection-start-column="31" selection-end-line="31" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="310" column="32" lean-forward="true" selection-start-line="310" selection-start-column="32" selection-end-line="310" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/example/example_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="35" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#72#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tms/settings.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tms/wsgi.py">
+    <entry file="file://$PROJECT_DIR$/devices/menus.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#219#228#0" expanded="true" />
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/forms.py">
+    <entry file="file://$PROJECT_DIR$/devices/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="12" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <element signature="e#9#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devices/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="28" lean-forward="true" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="35" lean-forward="true" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+          <folding>
+            <element signature="e#9#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="33" lean-forward="true" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#9#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/releases/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#9#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_cases/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+          <folding>
+            <element signature="e#9#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plans/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plans/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plans/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plans/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding>
+            <element signature="e#9#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plans/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="1" selection-start-line="13" selection-start-column="1" selection-end-line="13" selection-end-column="1" />
+          <folding>
+            <element signature="e#9#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tms/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="596">
+          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#9#33#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="7" />
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/admin.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plans/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <caret line="24" column="30" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
           <folding>
-            <element signature="e#24#63#0" expanded="true" />
+            <element signature="e#9#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_plans/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="88" selection-start-line="22" selection-start-column="88" selection-end-line="22" selection-end-column="88" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="e#9#44#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding>
+            <element signature="e#9#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_runs/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="6" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_cases/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="34" selection-start-line="33" selection-start-column="34" selection-end-line="33" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test_cases/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/my_work.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/system_log.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base/_menu.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base/menu.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/devices/delete_device.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="27" selection-start-line="13" selection-start-column="27" selection-end-line="13" selection-end-column="27" />
+          <folding>
+            <element signature="e#265#272#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/devices/update_device.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/devices/create_device.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="28" lean-forward="true" selection-start-line="5" selection-start-column="28" selection-end-line="5" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/menus.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="72" selection-start-line="8" selection-start-column="72" selection-end-line="8" selection-end-column="72" />
+          <folding>
+            <element signature="e#0#31#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tms/urls.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="195">
+          <caret line="13" column="39" lean-forward="true" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" lean-forward="true" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding>
-            <element signature="e#266#273#0" expanded="true" />
-            <element signature="e#680#687#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/test_case/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/apps.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="843">
-          <caret line="78" column="29" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/example/pagination.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" selection-start-line="20" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/device/device_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/device/device_add.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/base/bootstrap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/base/base_dashboard.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/project/project_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/project/project_update.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/project/project_delete.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/project/project_add.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/release/release_delete.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/project/project_views.py">
+    <entry file="file://$PROJECT_DIR$/templates/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
-          <caret line="18" selection-start-line="18" selection-end-line="19" selection-end-column="46" />
+          <caret line="18" column="29" lean-forward="true" selection-start-line="18" selection-start-column="29" selection-end-line="18" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devices/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="16" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="16" />
           <folding>
-            <element signature="e#0#45#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/dashboard.html">
+    <entry file="file://$PROJECT_DIR$/devices/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="76" selection-start-line="31" selection-start-column="76" selection-end-line="31" selection-end-column="76" />
+        <state relative-caret-position="495">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/test_run.html">
+    <entry file="file://$PROJECT_DIR$/projects/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="65" column="22" lean-forward="true" selection-start-line="65" selection-start-column="22" selection-end-line="65" selection-end-column="22" />
+          <folding>
+            <element signature="e#9#45#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/devices/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="47" lean-forward="true" selection-start-line="11" selection-start-column="47" selection-end-line="11" selection-end-column="47" />
+          <folding>
+            <element signature="e#9#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/projects/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="14" column="14" lean-forward="true" selection-start-line="14" selection-start-column="14" selection-end-line="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/report.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="25" selection-start-column="25" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="145" selection-start-line="145" selection-end-line="163" />
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
           <folding>
-            <element signature="e#0#15#0" expanded="true" />
-            <marker date="1535595422274" expanded="true" signature="6391:6394" ph="..." />
+            <element signature="e#9#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/views.py">
+    <entry file="file://$PROJECT_DIR$/templates/devices/read_device.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="35" selection-start-line="35" selection-end-line="55" selection-end-column="22" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="375">
+          <caret line="25" column="6" lean-forward="true" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/test_case/to-be-deleted-test_case_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/release/release_update.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="755">
-          <caret line="66" column="96" selection-start-line="66" selection-start-column="80" selection-end-line="66" selection-end-column="96" />
-          <folding>
-            <element signature="e#24#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/release/release_list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="30" lean-forward="true" selection-start-line="5" selection-end-line="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/overview.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="67" column="21" lean-forward="true" selection-start-line="67" selection-start-column="21" selection-end-line="67" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/base/base.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="54" selection-start-line="54" selection-end-line="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/base/base.html">
+    <entry file="file://$PROJECT_DIR$/templates/devices/device_index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
-          <caret line="15" column="74" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/test_case.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="38" column="96" selection-start-line="38" selection-start-column="96" selection-end-line="38" selection-end-column="96" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/release/release_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="32" column="50" lean-forward="true" selection-start-line="32" selection-start-column="50" selection-end-line="32" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/test_case/test_case_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="34" column="18" lean-forward="true" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/test_case/test_case_update.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="52" selection-start-line="13" selection-start-column="52" selection-end-line="13" selection-end-column="75" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/test_case/test_case_delete.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="10" lean-forward="true" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/test_case/test_case_views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="52" column="37" lean-forward="true" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#31#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/console/templates/console/release/release_add.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="7" lean-forward="true" selection-start-line="3" selection-start-column="7" selection-end-line="3" selection-end-column="7" />
+          <caret line="15" column="74" selection-start-line="15" selection-start-column="74" selection-end-line="15" selection-end-column="74" />
         </state>
       </provider>
     </entry>

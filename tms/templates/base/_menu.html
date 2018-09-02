@@ -1,0 +1,5 @@
+<ul class="nav nav-tabs">
+    {% for item in menu %}
+    <li><a href="{{ item.url }}{{ GLOBAL_PROJECT_ID }}">{{ item.title }} </a></li>&nbsp;|&nbsp;
+    {% endfor %}
+</ul>
