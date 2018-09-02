@@ -39,14 +39,14 @@ class TestRunOverviewView(generic.ListView):
 class TestRunCreateView(generic.CreateView):
     template_name = 'test_runs/create_test_run.html'
     form_class = TestRunForm
-    success_url = reverse_lazy('test_run_overview')
+    success_url = reverse_lazy('test_runs:test_run_overview')
 
 
 class TestRunUpdateView(generic.UpdateView):
     model = TestRun
     template_name = 'test_runs/update_test_run.html'
     form_class = TestRunForm
-    success_url = reverse_lazy('test_runs_overview')
+    success_url = reverse_lazy('test_runs:test_run_overview')
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)
@@ -56,6 +56,7 @@ class TestRunUpdateView(generic.UpdateView):
 
 class TestRunReadView(generic.DetailView):
     model = TestRun
+    context_object_name = 'test_run'
     template_name = 'test_runs/read_test_run.html'
 
     # def get_context_data(self, **kwargs):
@@ -66,8 +67,9 @@ class TestRunReadView(generic.DetailView):
 
 class TestRunDeleteView(generic.DeleteView):
     model = TestRun
+    context_object_name = 'test_run'
     template_name = 'test_runs/delete_test_run.html'
-    success_url = reverse_lazy('test_run_overview')
+    success_url = reverse_lazy('test_runs:test_run_overview')
 
     # def get_context_data(self, **kwargs):
     #     context = super().get_context_data(**kwargs)

@@ -11,7 +11,11 @@ urlpatterns = [
     path('test_cases/', include('django.contrib.auth.urls')),
     path('device/', include('devices.urls')),
     path('device/', include('django.contrib.auth.urls')),
-    path('', include('projects.urls')),
+    path('project/', include('projects.urls')),
+    path('project/', include('django.contrib.auth.urls')),
+    path('test_runs/', include('test_runs.urls')),
+    path('test_runs/', include('django.contrib.auth.urls')),
+    path('', include('dashboard.urls')),
 ]
 
 

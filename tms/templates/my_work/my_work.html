@@ -1,0 +1,177 @@
+{% extends 'base/base_modal.html' %}
+{% load menu %}
+{% block content %}
+{% generate_menu %}
+{% if not user.is_anonymous %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            {% include "base/menu.html" %}
+            <h4>
+                <strong>My Weekly Report</strong>
+            </h4>
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <button class="create-test_run btn btn-primary" type="button" name="button">
+                        <span class="fa fa-plus mr-2"></span>Review Weekly Report
+                    </button>
+                </div>
+            </div>
+            <p>Note: Review and send out your weekly report before 7PM every Thursday Singapore Time</p>
+
+            <h4>
+                <strong>My Pending Test Runs</strong>
+            </h4>
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <button class="create-test_run btn btn-primary" type="button" name="button">
+                        <span class="fa fa-plus mr-2"></span>Create Test Run
+                    </button>
+                </div>
+
+                <div class="col-12 mb-3">
+                    {% if my_uncompleted_test_runs %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center" scope="col">#</th>
+                            <th class="text-center" scope="col">Name</th>
+                            <th class="text-center" scope="col">Project</th>
+                            <th class="text-center" scope="col">Description</th>
+                            <th class="text-center" scope="col">Status</th>
+                            <th class="text-center" scope="col">Complete Rate (%)</th>
+                            <th class="text-center" scope="col">Last Updated Date</th>
+                            <th class="text-center" scope="col">Read / Update / Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for uncompleted_test_run in my_uncompleted_test_runs %}
+                        <tr>
+                            <th class="text-center" scope="row">{{ forloop.counter }}</th>
+                            <td class="text-center">{{ uncompleted_test_run.name }}</td>
+                            <td class="text-center">{{ uncompleted_test_run.project }}</td>
+                            <td class="text-center">{{ uncompleted_test_run.description }}</td>
+                            <td class="text-center">{{ uncompleted_test_run.get_test_run_status_display }}</td>
+                            <td class="text-center">TODO: 20%</td>
+                            <td class="text-center">{{ uncompleted_test_run.upd_date }}</td>
+                            <td class="text-center">
+                                <button type="button" class="update-test_run btn btn-sm btn-primary"
+                                        data-id="{% url 'test_runs:read_test_run' uncompleted_test_run.pk %}">
+                                    <span class="fa fa-eye"></span>
+                                </button>
+                                <button type="button" class="update-test_run btn btn-sm btn-primary"
+                                        data-id="{% url 'test_runs:update_test_run' uncompleted_test_run.pk %}">
+                                    <span class="fa fa-pencil"></span>
+                                </button>
+                                <button type="button" class="delete-test_run btn btn-sm btn-danger"
+                                        data-id="{% url 'test_runs:delete_test_run' uncompleted_test_run.pk %}">
+                                    <span class="fa fa-trash" aria-label="Delete"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="text-primary">No Uncompleted Test Runs yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+            <h4>
+                <strong>My Completed Test Runs in Past 7 Days</strong>
+            </h4>
+            <div class="row">
+                <div class="col-12 mb-3">
+                    {% if my_completed_in_7_days_test_runs %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center" scope="col">#</th>
+                            <th class="text-center" scope="col">Name</th>
+                            <th class="text-center" scope="col">Project</th>
+                            <th class="text-center" scope="col">Description</th>
+                            <th class="text-center" scope="col">Status</th>
+                            <th class="text-center" scope="col">Pass Rate (%)</th>
+                            <th class="text-center" scope="col">Comments</th>
+                            <th class="text-center" scope="col">Last Updated Date</th>
+                            <th class="text-center" scope="col">Read / Update / Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for completed_test_run in my_completed_in_7_days_test_runs %}
+                        <tr>
+                            <th class="text-center" scope="row">{{ forloop.counter }}</th>
+                            <td class="text-center">{{ completed_test_run.name }}</td>
+                            <td class="text-center">{{ completed_test_run.project }}</td>
+                            <td class="text-center">{{ completed_test_run.description }}</td>
+                            <td class="text-center">{{ completed_test_run.get_test_run_status_display }}</td>
+                            <td class="text-center">TODO: 95%</td>
+                            <td class="text-center">New bugs: <a href="#">OCHA-XXXX</a>, Regression bugs: etc.</td>
+                            <td class="text-center">{{ completed_test_run.upd_date }}</td>
+                            <td class="text-center">
+                                <button type="button" class="update-test_run btn btn-sm btn-primary"
+                                        data-id="{% url 'test_runs:read_test_run' completed_test_run.pk %}">
+                                    <span class="fa fa-eye"></span>
+                                </button>
+                                <button type="button" class="update-test_run btn btn-sm btn-primary"
+                                        data-id="{% url 'test_runs:update_test_run' completed_test_run.pk %}">
+                                    <span class="fa fa-pencil"></span>
+                                </button>
+                                <button type="button" class="delete-test_run btn btn-sm btn-danger"
+                                        data-id="{% url 'test_runs:delete_test_run' completed_test_run.pk %}">
+                                    <span class="fa fa-trash" aria-label="Delete"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="text-primary">No Completed Test Runs yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    {% endif %}
+    {% endblock content %}
+
+    {% block extrascripts %}
+    <script type="text/javascript">
+    $(function () {
+      // Log in & Sign up buttons
+      $(".login-btn").modalForm({formURL: "{% url 'login' %}", successURL: "/"});
+
+      // Create test_run button
+      $(".create-test_run").modalForm({formURL: "{% url 'test_runs:create_test_run' %}", successURL: "{% url 'my_work' %}"});
+
+      // Update test_run buttons
+      $(".update-test_run").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "{% url 'my_work' %}"});
+      });
+
+      // Delete test_run buttons
+      $(".delete-test_run").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "{% url 'my_work' %}"});
+      });
+
+    });
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+    {% endblock extrascripts %}
