@@ -9,15 +9,15 @@
 
 <div class="modal-body">
 
-  <div class=""><strong>Name</strong>: {{ weekly_report.name }}</div>
-  <div class=""><strong>Description</strong>: {{ weekly_report.current_task_list }}</div>
-  <div class=""><strong>Serial Number</strong>: {{ weekly_report.created_bug_list }}</div>
-  <div class=""><strong>OS Version</strong>: {{ weekly_report.followed_up_bug_list }}</div>
-  <div class=""><strong>Platform</strong>: {{ weekly_report.todo_task_list }}</div>
-  <div class=""><strong>Status</strong>: {{ weekly_report.good_thing }}</div>
-  <div class=""><strong>Keeper</strong>: {{ weekly_report.bad_thing }}</div>
-  <div class=""><strong>Created Date</strong>: {{ weekly_report.created_date }}</div>
-  <div class=""><strong>Updated Date</strong>: {{ weekly_report.upd_date }}</div>
+  <div class=""><strong>Name</strong>: {{ weekly_report.name|linebreaks }}</div>
+  <div class=""><strong>What you did last week</strong>: {{ weekly_report.current_task_list|linebreaks }}</div>
+  <div class=""><strong>What bugs you created last week</strong>: {{ weekly_report.created_bug_list|linebreaks }}</div>
+  <div class=""><strong>What bugs you followed up last week</strong>: {{ weekly_report.followed_up_bug_list|linebreaks }}</div>
+  <div class=""><strong>What will you do next in 1 or 2 weeks</strong>: {{ weekly_report.todo_task_list|linebreaks }}</div>
+  <div class=""><strong>Any good things in last week you wanted to share</strong>: {{ weekly_report.good_thing|linebreaks }}</div>
+  <div class=""><strong>Any bad things in last week you wanted to tell</strong>: {{ weekly_report.bad_thing|linebreaks }}</div>
+  <div class=""><strong>Created Date</strong>: {{ weekly_report.created_date|linebreaks }}</div>
+  <div class=""><strong>Updated Date</strong>: {{ weekly_report.upd_date|linebreaks }}</div>
 
 </div>
 

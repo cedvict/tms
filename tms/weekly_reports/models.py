@@ -3,6 +3,8 @@ from simple_history.models import HistoricalRecords
 
 from django.conf import settings
 
+from djrichtextfield.models import RichTextField
+
 
 class WeeklyReport(models.Model):
     name = models.CharField(max_length=50)
@@ -12,6 +14,8 @@ class WeeklyReport(models.Model):
     todo_task_list = models.CharField(max_length=500)
     good_thing = models.CharField(max_length=500)
     bad_thing = models.CharField(max_length=500)
+
+    content = RichTextField(max_length=500)
 
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.DO_NOTHING, default=None, blank=True)
 
