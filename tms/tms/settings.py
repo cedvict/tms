@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
+    'weekly_reports',
     'test_cases',
     'test_plans',
     'devices',

@@ -1,0 +1,26 @@
+{% load widget_tweaks %}
+
+<div class="modal-header">
+  <h3 class="modal-title">Weekly Report Details</h3>
+  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+<div class="modal-body">
+
+  <div class=""><strong>Name</strong>: {{ weekly_report.name }}</div>
+  <div class=""><strong>Description</strong>: {{ weekly_report.current_task_list }}</div>
+  <div class=""><strong>Serial Number</strong>: {{ weekly_report.created_bug_list }}</div>
+  <div class=""><strong>OS Version</strong>: {{ weekly_report.followed_up_bug_list }}</div>
+  <div class=""><strong>Platform</strong>: {{ weekly_report.todo_task_list }}</div>
+  <div class=""><strong>Status</strong>: {{ weekly_report.good_thing }}</div>
+  <div class=""><strong>Keeper</strong>: {{ weekly_report.bad_thing }}</div>
+  <div class=""><strong>Created Date</strong>: {{ weekly_report.created_date }}</div>
+  <div class=""><strong>Updated Date</strong>: {{ weekly_report.upd_date }}</div>
+
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+</div>

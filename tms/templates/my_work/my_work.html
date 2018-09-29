@@ -12,12 +12,52 @@
             </h4>
             <div class="row">
                 <div class="col-12 mb-3">
-                    <button class="create-test_run btn btn-primary" type="button" name="button">
-                        <span class="fa fa-plus mr-2"></span>Review Weekly Report
+                    <button class="create-weekly-report btn btn-primary" type="button" name="button">
+                        <span class="fa fa-plus mr-2"></span>Create Weekly Report
                     </button>
                 </div>
+
+                <div class="col-12 mb-3">
+                    {% if my_weekly_reports %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center" scope="col">#</th>
+                            <th class="text-center" scope="col">Name</th>
+                            <th class="text-center" scope="col">Last Updated Date</th>
+                            <th class="text-center" scope="col">Read / Update / Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for my_weekly_report in my_weekly_reports %}
+                        <tr>
+                            <th class="text-center" scope="row">{{ forloop.counter }}</th>
+                            <td class="text-center">{{ my_weekly_report.name }}</td>
+                            <td class="text-center">{{ my_weekly_report.upd_date }}</td>
+                            <td class="text-center">
+                                <button type="button" class="update-weekly-report btn btn-sm btn-primary"
+                                        data-id="{% url 'weekly_reports:read_weekly_report' my_weekly_report.pk %}">
+                                    <span class="fa fa-eye"></span>
+                                </button>
+                                <button type="button" class="update-weekly-report btn btn-sm btn-primary"
+                                        data-id="{% url 'weekly_reports:update_weekly_report' my_weekly_report.pk %}">
+                                    <span class="fa fa-pencil"></span>
+                                </button>
+                                <button type="button" class="delete-weekly-report btn btn-sm btn-danger"
+                                        data-id="{% url 'weekly_reports:delete_weekly_report' my_weekly_report.pk %}">
+                                    <span class="fa fa-trash" aria-label="Delete"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="text-primary">No Uncompleted Test Runs yet.</p>
+                    {% endif %}
+                </div>
+
             </div>
-            <p>Note: Review and send out your weekly report before 7PM every Thursday Singapore Time</p>
 
             <h4>
                 <strong>My Pending Test Runs</strong>
@@ -156,6 +196,19 @@
 
       // Delete test_run buttons
       $(".delete-test_run").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "{% url 'my_work' %}"});
+      });
+
+      // Create test_run button
+      $(".create-weekly-report").modalForm({formURL: "{% url 'weekly_reports:create_weekly_report' %}", successURL: "{% url 'my_work' %}"});
+
+      // Update test_run buttons
+      $(".update-weekly-report").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "{% url 'my_work' %}"});
+      });
+
+      // Delete test_run buttons
+      $(".delete-weekly-report").each(function () {
         $(this).modalForm({formURL: $(this).data('id'), successURL: "{% url 'my_work' %}"});
       });
 

@@ -1,0 +1,105 @@
+{% extends 'base/base_modal.html' %}
+{% load menu %}
+{% block content %}
+{% generate_menu %}
+{% if not user.is_anonymous %}
+<div class="container mt-3">
+    <div class="row">
+        <div class="col">
+            {% include "base/menu.html" %}
+            <h4>
+                <strong>Device List</strong>
+            </h4>
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <button class="create-device btn btn-primary" type="button" name="button">
+                        <span class="fa fa-plus mr-2"></span>Create Device
+                    </button>
+                </div>
+
+                
+                <div class="col-12 mb-3">
+                    {% if devices %}
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th class="text-center" scope="col">#</th>
+                            <th class="text-center" scope="col">Name</th>
+                            <th class="text-center" scope="col">Description</th>
+                            <th class="text-center" scope="col">Serial Number</th>
+                            <th class="text-center" scope="col">OS Version</th>
+                            <th class="text-center" scope="col">Platform</th>
+                            <th class="text-center" scope="col">Status</th>
+                            <th class="text-center" scope="col">Keeper</th>
+                            <th class="text-center" scope="col">Read / Update / Delete</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for device in devices %}
+                        <tr>
+                            <th class="text-center" scope="row">{{ forloop.counter }}</th>
+                            <td class="text-center">{{ device.name }}</td>
+                            <td class="text-center">{{ device.description }}</td>
+                            <td class="text-center">{{ device.sn }}</td>
+                            <td class="text-center">{{ device.os_version }}</td>
+                            <td class="text-center">{{ device.get_device_platform_display }}</td>
+                            <td class="text-center">{{ device.get_device_status_display }}</td>
+                            <td class="text-center">{{ device.user }}</td>
+                            <td class="text-center">
+                                <button type="button" class="update-device btn btn-sm btn-primary"
+                                        data-id="{% url 'devices:read_device' device.pk %}">
+                                    <span class="fa fa-eye"></span>
+                                </button>
+                                <button type="button" class="update-device btn btn-sm btn-primary"
+                                        data-id="{% url 'devices:update_device' device.pk %}">
+                                    <span class="fa fa-pencil"></span>
+                                </button>
+                                <button type="button" class="delete-device btn btn-sm btn-danger"
+                                        data-id="{% url 'devices:delete_device' device.pk %}">
+                                    <span class="fa fa-trash" aria-label="Delete"></span>
+                                </button>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                    {% else %}
+                    <p class="text-primary">No device added yet.</p>
+                    {% endif %}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {% endif %}
+    {% endblock content %}
+
+    {% block extrascripts %}
+    <script type="text/javascript">
+    $(function () {
+      // Log in & Sign up buttons
+      $(".login-btn").modalForm({formURL: "{% url 'login' %}", successURL: "/"});
+
+      // Create device button
+      $(".create-device").modalForm({formURL: "{% url 'devices:create_device' %}", successURL: "{% url 'devices:device_overview' %}"});
+
+      // Update device buttons
+      $(".update-device").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "{% url 'devices:device_overview' %}"});
+      });
+
+      // Delete device buttons
+      $(".delete-device").each(function () {
+        $(this).modalForm({formURL: $(this).data('id'), successURL: "{% url 'devices:device_overview' %}"});
+      });
+
+    });
+
+
+
+
+
+
+    </script>
+    {% endblock extrascripts %}

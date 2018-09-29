@@ -10,7 +10,7 @@ from news.models import News
 from projects.models import Project
 from releases.models import Release
 from test_runs.models import TestRun
-from django.conf import settings
+from weekly_reports.models import WeeklyReport
 from datetime import date, timedelta
 
 
@@ -56,6 +56,9 @@ class MyWorkView(generic.ListView):
         context = super().get_context_data(**kwargs)
         current_user = self.request.user
         context['current_user_id'] = current_user.id
+
+        context['my_weekly_reports'] = WeeklyReport.objects.filter(Q(user__id=current_user.id))
+
         context['my_uncompleted_test_runs'] = TestRun.objects.filter(Q(user__id=current_user.id),
                                                                      Q(test_run_status=TEST_RUN_STATUS_CREATED) | Q(
                                                                          test_run_status=TEST_RUN_STATUS_ACTIVE) | Q(
@@ -65,7 +68,8 @@ class MyWorkView(generic.ListView):
         end_date = start_date + timedelta(days=7)
 
         context['my_completed_in_7_days_test_runs'] = TestRun.objects.filter(Q(user__id=current_user.id),
-                                                                             Q(test_run_status=TEST_RUN_STATUS_COMPLETED)
+                                                                             Q(
+                                                                                 test_run_status=TEST_RUN_STATUS_COMPLETED)
                                                                              )
         context['does_enter_a_project'] = False
         return context
